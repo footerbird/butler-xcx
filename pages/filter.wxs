@@ -1,0 +1,17 @@
+var domain_format = function(value){
+  return value.replace(getRegExp('\.','g'), '_')
+}
+
+var number_format = function(value){
+  return parseInt(value, 10).toLocaleString()
+}
+
+var date_format = function(value){
+  return value.substring(0, 9)
+}
+
+module.exports = {
+  domain_format: domain_format,
+  number_format: number_format,
+  date_format: date_format
+}

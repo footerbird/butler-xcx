@@ -1,0 +1,26 @@
+<wxs src="../filter.wxs" module="filter" />
+<div class="container" style="height: auto;">
+
+    <view class="mark-list">
+        <block wx:for="{{ mark_list }}" wx:for-item="mark" wx:key="regno_md">
+        <navigator class="mark-item"
+        url="/pages/mark/detail?regno_md={{ mark.regno_md }}" >
+            <view class="thumb-box">
+                <image mode="widthFix" class="thumb" src="https://m.waitui.com/{{ mark.image_path }}" />
+            </view>
+            <view class="category">
+                <block wx:if="{{ mark.mark_category < 10 }}">
+                {{ '0' + mark.mark_category }}</block>
+                <block wx:else>{{ mark.mark_category }}</block>
+                <view class="wx-i"></view>{{ mark.mark_name }}
+            </view>
+            <view class="price-btn">¥{{ filter.number_format(mark.mark_price) }}</view>
+        </navigator>
+        </block>
+    </view>
+    
+    <view class="ta-c pb10 bg-white" wx:if="{{ !mark_finished }}">
+        <van-loading size="14px">加载中...</van-loading>
+    </view>
+
+</div>

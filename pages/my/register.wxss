@@ -1,0 +1,56 @@
+/*变量*/
+/*常用的一些混合*/
+.ellip {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.after-cls:after {
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.display-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.forbid {
+  opacity: 0.8 !important;
+  cursor: not-allowed;
+}
+.login-form {
+  margin-top: 120rpx;
+  padding: 0 30px;
+}
+.login-form .login-input {
+  font-size: 16px;
+  line-height: 110rpx;
+  padding: 0;
+}
+.login-form .login-link-box {
+  margin-top: 60rpx;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+}
+.login-form .login-link-box .login-link {
+  font-size: 14px;
+  color: #5195d5;
+  line-height: 24px;
+}
+.login-form .login-forget-pwd {
+  position: absolute;
+  top: 40rpx;
+  right: 0;
+  font-size: 14px;
+  color: #5195d5;
+  line-height: 24px;
+}

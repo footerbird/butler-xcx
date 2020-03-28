@@ -1,0 +1,24 @@
+<view class="container" style="height: auto;">
+
+    <view class="brand-list">
+        <block wx:for="{{ brand_list }}" wx:for-item="brand" wx:key="brand_id">
+        <navigator class="brand-item"
+        url="/pages/brand/detail?brand_id={{ brand.brand_id }}" >
+            <view class="brand-item__bd">
+                <view class="wx-h4 brand-item__title">{{ brand.brand_name }}
+                <view class="wx-span fl-r f13 col-gray9 mt5">{{ brand.industry_name }}</view></view>
+                <view class="wx-p brand-item__desc">{{ brand.brand_lead }}</view>
+            </view>
+            <view class="brand-item__hd">
+                <image class="brand-item__thumb"
+                src="https://m.waitui.com/{{ brand.thumb_path }}" />
+            </view>
+        </navigator>
+        </block>
+    </view>
+    
+    <view class="ta-c pb10 bg-white" wx:if="{{ !brand_finished }}">
+        <van-loading size="14px">加载中...</van-loading>
+    </view>
+
+</view>

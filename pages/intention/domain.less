@@ -1,0 +1,90 @@
+/*变量*/
+@base-color: #ea6f5a;//基本色号
+@my-color: #13426b;//控制中心色号
+
+
+
+/*常用的一些混合*/
+.ellip{//超出隐藏或换行
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.after-cls{//清除浮动
+    &:after{
+        content: " "; display: block; height: 0;
+        visibility: hidden; clear: both;
+    }
+}
+.display-flex{//flex布局
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.flex-number(@num: 1){
+    -webkit-box-flex: @num;
+    -webkit-flex: @num;
+    flex: @num;
+}
+.border-box(){//盒模型
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.border-radius(@radius: 0){//边框圆角
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+.opacity(@opacity: 1){//透明度
+    @opacityPercentage: @opacity * 100;
+    filter:alpha(opacity=@opacityPercentage);
+    -moz-opacity: @opacity;
+    opacity: @opacity;
+}
+.transition-all(@time: .2s){//动画过渡
+    -webkit-transition: all linear @time;
+    transition: all linear @time;
+}
+.forbid{//禁止点击
+    opacity: .8 !important;
+    cursor: not-allowed;
+}
+
+
+
+.intention-page{
+    .intention-page__title{
+        border-bottom: 1px solid #efefef;
+        .wx-span{
+            border-left: 5px solid @base-color;
+            padding-left: 10px;
+            font-size: 14px;
+        }
+    }
+    .van-button-area{
+        padding: 10px 16px;
+    }
+    .home-link{
+        display: block;
+        width: 50%;
+        margin: 20px auto;
+        image{
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+    .customer-service{
+        display: inline-block;
+        height: 38px;
+        line-height: 38px;
+        padding: 0 25px;
+        font-size: 14px;
+        color: #13426b;
+        background: #fafafa;
+        .border-radius(2px);
+    }
+}

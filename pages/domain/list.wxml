@@ -1,0 +1,25 @@
+<wxs src="../filter.wxs" module="filter" />
+<view class="container" style="height: auto;">
+
+    <view class="domain-list">
+        <block wx:for="{{ domain_list }}" wx:for-item="domain" wx:key="domain_name">
+        <navigator class="domain-item"
+        url="/pages/domain/detail?domain_name={{ filter.domain_format(domain.domain_name) }}" >
+            <view class="wx-h3">{{ domain.domain_name }}</view>
+            <view class="summary">{{ domain.domain_summary }}</view>
+            <view class="item-row">
+                <view class="item-cols ta-l col-base ellip">
+                    <block wx:if="{{ domain.domain_price == 0 }}">议价</block>
+                    <block wx:else>{{ filter.number_format(domain.domain_price) }}元</block>
+                </view>
+                <view class="item-cols ta-r col-gray9">{{ domain.expired_date }}天</view>
+            </view>
+        </navigator>
+        </block>
+    </view>
+    
+    <view class="ta-c pb10 bg-white" wx:if="{{ !domain_finished }}">
+        <van-loading size="14px">加载中...</van-loading>
+    </view>
+
+</view>

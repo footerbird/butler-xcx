@@ -1,0 +1,118 @@
+/*变量*/
+/*常用的一些混合*/
+.ellip {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.after-cls:after {
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.display-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.forbid {
+  opacity: 0.8 !important;
+  cursor: not-allowed;
+}
+.wx-article {
+  padding: 20px 15px;
+  font-size: 18px;
+  line-height: 1.8;
+  background-color: #fff;
+  color: #3d464d;
+}
+.wx-article .article-title {
+  padding: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.wx-article .article-author {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 48px;
+  margin-bottom: 20px;
+}
+.wx-article .article-author-figure {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.wx-article .article-author-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+.wx-article .article-author-time {
+  font-size: 14px;
+  color: #999;
+}
+.wx-article .article-summary {
+  position: relative;
+  font-size: 16px;
+  color: #666;
+  padding: 10px 10px 10px 36px;
+  background-color: #f7f7f7;
+  margin-bottom: 20px;
+}
+.wx-article .article-summary:before {
+  position: absolute;
+  content: "“";
+  font-size: 32px;
+  height: 36px;
+  top: 5px;
+  left: 10px;
+}
+.wx-article .wx-section {
+  margin-bottom: 1.5em;
+}
+.wx-article .wx-h1 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 0.9em;
+}
+.wx-article .wx-h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0.34em;
+}
+.wx-article .wx-h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0.34em;
+}
+.wx-article .wx-p {
+  margin: 0 0 1em;
+}
+.wx-article navigator {
+  display: inline;
+  color: #3d464d;
+}
+.wx-article view {
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+.wx-article image {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}

@@ -1,0 +1,77 @@
+/*变量*/
+/*常用的一些混合*/
+.ellip {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.after-cls:after {
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.display-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.forbid {
+  opacity: 0.8 !important;
+  cursor: not-allowed;
+}
+.domain-list {
+  padding: 15rpx;
+  background-color: #fff;
+}
+.domain-list:after {
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.domain-list .domain-item {
+  float: left;
+  width: 330rpx;
+  position: relative;
+  margin: 15rpx;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.domain-list .domain-item .wx-h3 {
+  font-size: 18px;
+  color: #5195d5;
+  font-weight: normal;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.domain-list .domain-item .summary {
+  font-size: 13px;
+  color: #666;
+  height: 24px;
+  line-height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.domain-list .domain-item .item-row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.domain-list .domain-item .item-row .item-cols {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  font-size: 13px;
+}

@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/domain/list",
+    "pages/domain/detail",
+    "pages/mark/list",
+    "pages/mark/detail",
+    "pages/brand/list",
+    "pages/brand/detail",
+    "pages/company/list",
+    "pages/company/detail",
+    "pages/help/about",
+    "pages/help/agreement",
+    "pages/intention/domain",
+    "pages/intention/mark",
+    "pages/my/console",
+    "pages/my/login",
+    "pages/my/register",
+    "pages/my/findpwd"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "外推网",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#3d464d",
+    "selectedColor": "#ea6f5a",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/domain/list",
+        "text": "域名"
+      },
+      {
+        "pagePath": "pages/mark/list",
+        "text": "商标"
+      },
+      {
+        "pagePath": "pages/my/console",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

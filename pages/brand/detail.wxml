@@ -1,0 +1,53 @@
+<view style="height: 100%;">
+
+    <view class="container">
+
+        <block wx:if="{{ page_loading }}">
+        <view class="loading-box ta-c">
+            <van-loading size="24px" vertical>加载中...</van-loading>
+        </view>
+        </block>
+        <block wx:else>
+        <view class="wx-article">
+            <view class="wx-h1 article-title">{{ brand.brand_name }}品牌怎么样</view>
+            <view class="article-summary">
+                <block wx:if="{{brand.brand_company !== ''}}">
+                    <block wx:if="{{ company !== null }}">
+                    「{{ brand.brand_name }}」是
+                    <navigator class="col-blue" url="/pages/company/detail?company_id={{ company.company_id }}">
+                    {{ company.name }}</navigator> 旗下著名品牌。
+                    </block>
+                    <block wx:else>
+                    「「{{ brand.brand_name }}」是{{ brand.brand_company }}旗下著名品牌。
+                    </block>
+                    <block wx:if="{{ brand.brand_origin !== '' }}">该品牌发源于{{ brand.brand_origin }}，</block>
+                    <block wx:if="{{ brand.brand_legal !== '' }}">由创始人{{ brand.brand_legal }}</block>
+                    <block wx:if="{{ brand.brand_start !== '' }}">在{{ brand.brand_start }}期间创立，</block>
+                    经过多年的不懈努力和高速发展，现已成为行业的标杆品牌。
+                </block>
+                <block wx:else>{{ brand.brand_lead }}</block>
+            </view>
+            <view class="wx-section">
+                <block wx:if="{{ brand.poster_path != '' }}">
+                <view class="wx-p">
+                    <image mode="widthFix" src="https://m.waitui.com/{{ brand.poster_path }}" />
+                </view>
+                </block>
+                <view>
+                    <rich-text nodes="{{ brand.brand_content }}"></rich-text>
+                </view>
+                <block wx:if="{{ brand.brand_phone != '' }}">
+                <view class="wx-p f12 col-gray9">联系电话：{{ brand.brand_phone }}</view>
+                </block>
+            </view>
+        </view>
+        
+        <view class="f14 col-gray9 lh20 mt10 bg-white" style="padding: 15px;">
+          本页详细列出关于{{ brand.brand_name }}
+          含品牌所属公司介绍，{{ brand.brand_name }}
+          所处行业的品牌地位及优势。</view>
+        </block>
+
+    </view>
+
+</view>

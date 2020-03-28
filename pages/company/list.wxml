@@ -1,0 +1,31 @@
+<wxs src="../filter.wxs" module="filter" />
+<view class="container" style="height: auto;">
+
+    <view class="company-list">
+        <block wx:for="{{ company_list }}" wx:for-item="company" wx:key="company_id">
+        <navigator class="company-item"
+        url="/pages/company/detail?company_id={{ company.company_id }}" >
+            <view class="wx-h3">{{ company.name }}</view>
+            <view class="item-row">
+                <view class="item-cols ta-l">
+                    <view class="wx-h4">法定代表人</view>
+                    <view class="wx-p">{{ company.oper_name }}</view>
+                </view>
+                <view class="item-cols ta-c">
+                    <view class="wx-h4">注册资本</view>
+                    <view class="wx-p">{{ company.regist_capi }}</view>
+                </view>
+                <view class="item-cols ta-r">
+                    <view class="wx-h4">成立日期</view>
+                    <view class="wx-p">{{ filter.date_format(company.start_date) }}</view>
+                </view>
+            </view>
+        </navigator>
+        </block>
+    </view>
+    
+    <view class="ta-c pt10 pb10" wx:if="{{ !company_finished }}">
+        <van-loading size="14px">加载中...</van-loading>
+    </view>
+
+</view>

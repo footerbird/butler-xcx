@@ -1,0 +1,88 @@
+<wxs module="computed">
+var Valid = {
+  isMobile: function(str){ // 验证手机号码
+    var regexp = getRegExp('^1[3|4|5|8][0-9]\d{8}$','g');
+    return regexp.test(str);
+  },
+  isCode6: function(str){ // 验证手机验证码，6位数字
+    var regexp = getRegExp('^\d{6}$','g');
+    return regexp.test(str);
+  }
+}
+
+var forbid_code_btn = function(phone_num,sending_code){
+  return !Valid.isMobile(phone_num) || sending_code;
+}
+
+var forbid_login_btn = function(login_type,phone_num,code_num,pwd_num,sending_login){
+  if (login_type === 'pwd_login') { // 密码登录
+    if (Valid.isMobile(phone_num) && pwd_num !== '' && !sending_login) {
+      return false;
+    }
+    return true;
+  } // 短信登录
+  if (Valid.isMobile(phone_num) && Valid.isCode6(code_num) && !sending_login) {
+    return false;
+  }
+  return true;
+}
+
+module.exports = {
+  forbid_code_btn: forbid_code_btn,
+  forbid_login_btn: forbid_login_btn
+}
+</wxs>
+<view style="height: 100%;">
+
+    <view class="container bg-white">
+
+        <view class="login-form">
+            <view>
+                <van-field value="{{ phone_num }}" type="tel" maxlength="11" clearable bindinput="phoneNumInput"
+                  class="login-input" placeholder="输入手机号"
+                  custom-style="font-size: 16px; height: 55px; line-height:55px; padding: 0;" >
+                    <!-- 这里的插值是为了让行高起效果 -->
+                    <van-button slot="button" custom-style="width: 0; min-width: 0; padding: 0; border: none;"></van-button>
+                </van-field>
+                <!-- 下面的显示隐藏必须用v-show,不能用v-if，不然field输入框插值无效 -->
+                <view hidden="{{ login_type != 'pwd_login' }}">
+                <van-field value="{{ pwd_num }}" type="password" clearable bindinput="pwdNumInput"
+                  class="login-input" placeholder="输入密码"
+                  custom-style="font-size: 16px; height: 55px; line-height:55px; padding: 0;">
+                    <!-- 这里的插值是为了让行高起效果 -->
+                    <van-button slot="button" custom-style="width: 0; min-width: 0; padding: 0; border: none;"></van-button>
+                </van-field>
+                </view>
+                <view hidden="{{ login_type != 'sms_login' }}">
+                <van-field value="{{ code_num }}" clearable bindinput="codeNumInput"
+                  class="login-input" placeholder="输入验证码"
+                  custom-style="font-size: 16px; height: 55px; line-height:55px; padding: 0;">
+                    <van-button slot="button" size="small" type="default" disabled="{{ computed.forbid_code_btn(phone_num,sending_code) }}"
+                      bindtap="sendCodeLogin"
+                      custom-style="font-size: 14px; border: none;">{{ code_msg }}</van-button>
+                </van-field>
+                </view>
+            </view>
+            <view style="position: relative; padding-top: 120rpx;">
+                <navigator class="wx-a login-forget-pwd" url="/pages/my/findpwd">忘记密码？</navigator>
+                <van-button type="primary" color="#ea6f5a" custom-style="font-size: 18px;"
+                  disabled="{{ computed.forbid_login_btn(login_type,phone_num,code_num,pwd_num,sending_login) }}"
+                  block loading="{{ sending_login }}"
+                  bindtap="funcLogin">登录</van-button>
+            </view>
+            <view class="login-link-box">
+                <block wx:if="{{ login_type == 'pwd_login' }}">
+                <view class="wx-a login-link" bindtap="switchLoginType">短信登录</view>
+                </block>
+                <block wx:else>
+                <view class="wx-a login-link" bindtap="switchLoginType">密码登录</view>
+                </block>
+                <navigator class="wx-a login-link" url="/pages/my/register">注册</navigator>
+            </view>
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

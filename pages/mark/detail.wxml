@@ -1,0 +1,95 @@
+<wxs src="../filter.wxs" module="filter" />
+<view style="height: 100%;">
+
+    <view class="container">
+
+        <block wx:if="{{ page_loading }}">
+        <view class="loading-box ta-c">
+            <van-loading size="24px" vertical>加载中...</van-loading>
+        </view>
+        </block>
+        <block wx:else>
+        <view class="mark-detail">
+
+            <view class="info-top">
+                <view class="thumb-box">
+                    <image mode="widthFix" class="thumb" src="https://m.waitui.com/{{ mark.image_path }}" />
+                </view>
+                <view class="thumb-right">
+                    <view class="wx-h4">{{ mark.mark_name }}
+                        <block wx:if="{{ mark.is_onsale == 'sale' }}">
+                        <view class="wx-span status">出售中</view>
+                        </block>
+                    </view>
+                    <view class="price">
+                        <block wx:if="{{ mark.is_onsale == 'sale' }}">
+                        <text class="wx-font f18 col-gray9">价格：</text>
+                        ¥{{ filter.number_format(mark.mark_price) }}
+                        </block>
+                        <block wx:else>
+                        <text class="wx-font col-gray9 f16">（已下架）</text>
+                        </block>
+                    </view>
+                </view>
+                <view class="wx-table" width="100%">
+                    <view class="wx-tbody">
+                        <view class="wx-tr">
+                            <view class="wx-td" width="50%">
+                                <block wx:if="{{ mark.mark_category < 10 }}">
+                                <text>第{{ '0' + mark.mark_category }}类\t\t{{ mark.category_name }}</text>
+                                </block>
+                                <block wx:else>
+                                <text>第{{ mark.mark_category }}类\t\t{{ mark.category_name }}</text>
+                                </block>
+                            </view>
+                            <view class="wx-td" width="50%">
+                                <block wx:if="{{ mark.regno_encode != '' }}">
+                                <image src="https://m.waitui.com/captcha_regno_image/{{ mark.regno_encode }}" />
+                                </block>
+                            </view>
+                        </view>
+                        <view class="wx-tr">
+                            <view class="wx-td" width="50%">{{ mark.private_limit }}</view>
+                            <view class="wx-td" width="50%">注册年限：{{ mark.reg_year }}</view>
+                        </view>
+                        <view class="wx-tr">
+                            <view class="wx-td" colspan="2">商品服务：{{ mark.app_range }}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="ta-c pt20 pb20">
+                    <block wx:if="{{ mark.is_onsale == 'sale' }}">
+                    <view class="pub-btn-blue">在线咨询</view>
+                    </block>
+                </view>
+            </view>
+
+            <view class="info-list">
+                <view class="wx-h4">商标详情信息</view>
+                <view class="wx-dl pt10"><view class="wx-dt">初审公告期号</view><view class="wx-dd">{{ mark.announce_issue }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">初审公告日期</view><view class="wx-dd">{{ mark.announce_date | date_format }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">注册公告期号</view><view class="wx-dd">{{ mark.reg_issue }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">注册公告日期</view><view class="wx-dd">{{ mark.reg_date | date_format }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">专用权期限</view><view class="wx-dd">{{ mark.private_limit }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">类似群</view><view class="wx-dd ellip">{{ mark.mark_group }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">商品/服务</view><view class="wx-dd">{{ mark.app_range }}</view></view>
+                <view class="wx-dl pb10"><view class="wx-dt">商标状态</view>
+                    <view class="wx-dd">
+                        <block wx:for="{{ mark.mark_flow }}" wx:for-item="flow" wx:key="index">
+                        <text>{{ flow.flowDate }}\t\t\t\t{{ flow.flowName }}\n</text>
+                        </block>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+
+        <view class="f14 col-gray9 lh20 mt10 bg-white" style="padding: 15px;">
+          本页详细列出关于{{ mark.mark_name }}商标的出售信息，
+          含商标分类、商标注册号、商标使用期限、商标注册年限、
+          商标服务分类、商标出售价格信息。</view>
+        </block>
+
+    </view>
+
+</view>

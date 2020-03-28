@@ -1,0 +1,146 @@
+/*变量*/
+@base-color: #ea6f5a;//基本色号
+@my-color: #13426b;//控制中心色号
+
+
+
+/*常用的一些混合*/
+.ellip{//超出隐藏或换行
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.after-cls{//清除浮动
+    &:after{
+        content: " "; display: block; height: 0;
+        visibility: hidden; clear: both;
+    }
+}
+.display-flex{//flex布局
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.flex-number(@num: 1){
+    -webkit-box-flex: @num;
+    -webkit-flex: @num;
+    flex: @num;
+}
+.border-box(){//盒模型
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.border-radius(@radius: 0){//边框圆角
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+.opacity(@opacity: 1){//透明度
+    @opacityPercentage: @opacity * 100;
+    filter:alpha(opacity=@opacityPercentage);
+    -moz-opacity: @opacity;
+    opacity: @opacity;
+}
+.transition-all(@time: .2s){//动画过渡
+    -webkit-transition: all linear @time;
+    transition: all linear @time;
+}
+.forbid{//禁止点击
+    opacity: .8 !important;
+    cursor: not-allowed;
+}
+
+
+
+.wx-article{
+    padding: 20px 15px;
+    font-size: 18px;
+    line-height: 1.8;
+    background-color: #fff;
+    color: #3d464d;
+    .article-title{
+        padding: 10px;
+        font-size: 22px;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: .5em;
+    }
+    .article-author{
+        .display-flex;
+        line-height: 48px;
+        margin-bottom: 20px;
+    }
+    .article-author-figure{
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .article-author-name{
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 15px;
+    }
+    .article-author-time{
+        font-size: 14px;
+        color: #999;
+    }
+    .article-summary{
+        position: relative;
+        font-size: 16px;
+        color: #666;
+        padding: 10px 10px 10px 36px;
+        background-color: #f7f7f7;
+        margin-bottom: 20px;
+        &:before{
+            position: absolute;
+            content: "“";
+            font-size: 32px;
+            height: 36px;
+            top: 5px;
+            left: 10px;
+        }
+    }
+    .wx-section {
+        margin-bottom: 1.5em;
+    }
+    .wx-h1 {
+        font-size: 18px;
+        font-weight:400;
+        margin-bottom: .9em;
+    }
+    .wx-h2 {
+        font-size: 20px;
+        font-weight:600;
+        margin-bottom: .34em;
+    }
+    .wx-h3 {
+        font-size: 18px;
+        font-weight:600;
+        margin-bottom: .34em;
+    }
+    .wx-p {
+        margin: 0 0 1em;
+    }
+    navigator{
+        display: inline;
+        color: #3d464d;
+    }
+    view{
+        max-width: 100%;
+        box-sizing: border-box;
+        word-wrap: break-word;
+    }
+    image{
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        word-wrap: break-word;
+    }
+}

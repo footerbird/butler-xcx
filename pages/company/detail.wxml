@@ -1,0 +1,108 @@
+<wxs src="../filter.wxs" module="filter" />
+<view style="height: 100%;">
+
+    <view class="container">
+
+        <block wx:if="{{ page_loading }}">
+        <view class="loading-box ta-c">
+            <van-loading size="24px" vertical>加载中...</van-loading>
+        </view>
+        </block>
+        <block wx:else>
+        <view class="company-detail">
+
+            <view class="info-top">
+                <view class="wx-h4">{{ company.name }}
+                    <view class="wx-em tag-status ml5">在业</view>
+                    <block wx:if="{{ company.certify_status != '' && company.certify_status == 'success' }}">
+                    <view class="wx-em tag-certify ml5">认证</view>
+                    </block>
+                </view>
+                <view class="wx-table" width="100%">
+                    <view class="wx-tbody">
+                        <view class="wx-tr">
+                            <view class="wx-td col-base" width="50%">
+                                <view class="wx-i ico-legal"></view>{{ company.oper_name }}
+                            </view>
+                            <view class="wx-td" width="50%">
+                                <view class="wx-i ico-capital"></view>{{ company.regist_capi }}
+                            </view>
+                        </view>
+                        <view class="wx-tr">
+                            <view class="wx-td" width="50%">
+                                <view class="wx-i ico-tel"></view>
+                                <block wx:if="{{ company.contact_phone == '' }}">暂无</block>
+                                <block wx:else>{{ company.contact_phone }}</block>
+                            </view>
+                            <view class="wx-td" width="50%">
+                                <view class="wx-i ico-email"></view>
+                                <block wx:if="{{ company.contact_email == '' }}">暂无</block>
+                                <block wx:else>{{ company.contact_email }}</block>
+                            </view>
+                        </view>
+                        <view class="wx-tr">
+                            <view class="wx-td" colspan="2">
+                                <view class="wx-i ico-address"></view>
+                                <block wx:if="{{ company.contact_address == '' }}">暂无</block>
+                                <block wx:else>{{ company.contact_address }}</block>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            
+            <view class="info-list">
+                <view class="wx-h4">工商信息</view>
+                <view class="wx-dl pt10"><view class="wx-dt">实缴资本</view><view class="wx-dd">{{ company.real_capi }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">经营状态</view><view class="wx-dd">{{ company.status }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">成立日期</view><view class="wx-dd">{{ filter.date_format(company.start_date) }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">社会信用代码</view><view class="wx-dd">{{ company.credit_code }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">纳税人识别号</view><view class="wx-dd">{{ company.tax_no }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">注册号</view><view class="wx-dd">{{ company.no }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">组织机构代码</view><view class="wx-dd">{{ company.org_no }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">公司类型</view><view class="wx-dd">{{ company.econ_kind }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">所属行业</view><view class="wx-dd">{{ company.industry }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">核准日期</view><view class="wx-dd">{{ filter.date_format(company.check_date) }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">登记机关</view><view class="wx-dd">{{ company.belong_org }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">所属地区</view><view class="wx-dd">{{ company.province }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">英文名</view><view class="wx-dd">{{ company.en_name }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">曾用名</view><view class="wx-dd">{{ company.original_name }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">参保人数</view><view class="wx-dd">{{ company.insured_person }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">人员规模</view><view class="wx-dd">{{ company.staff_size }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">营业期限</view><view class="wx-dd">{{ company.business_term }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">企业地址</view><view class="wx-dd">{{ company.address }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">经营范围</view><view class="wx-dd"><text>\t</text></view></view>
+                <view class="wx-dl pb10"><view class="wx-dd ml0 pl0">{{ company.scope }}</view></view>
+            </view>
+
+        </view>
+        
+        <block wx:if="{{ brand_list.length != 0 }}">
+        <view class="brand-list mt10">
+            <block wx:for="{{ brand_list }}" wx:for-item="brand" wx:key="brand_id">
+            <navigator class="brand-item"
+            url="/pages/brand/detail?brand_id={{ brand.brand_id }}" >
+                <view class="brand-item__bd">
+                    <view class="wx-h4 brand-item__title">{{ brand.brand_name }}
+                    <view class="wx-span fl-r f13 col-gray9 mt5">{{ brand.industry_name }}</view></view>
+                    <view class="wx-p brand-item__desc">{{ brand.brand_lead }}</view>
+                </view>
+                <view class="brand-item__hd">
+                    <image class="brand-item__thumb"
+                    src="https://m.waitui.com/{{ brand.thumb_path }}" />
+                </view>
+            </navigator>
+            </block>
+        </view>
+        </block>
+
+        <view class="f14 col-gray9 lh20 mt10 bg-white" style="padding: 15px;">
+          本页详细列出关于{{ company.name }}的工商信息，
+          含公司法定代表人、注册资本、经营状态、成立日期、纳税人识别号、
+          公司类型、所属行业、所属地区、曾用名、参保人数、人员规模、
+          营业期限、企业地址、经营范围等信息。</view>
+        </block>
+
+    </view>
+
+</view>

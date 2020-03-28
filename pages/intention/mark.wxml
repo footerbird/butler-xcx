@@ -1,0 +1,33 @@
+<view style="height: 100%;">
+
+    <view class="container">
+
+        <view class="intention-page">
+        
+            <image mode="widthFix" src="/assets/images/intention-top.jpg" style="width: 100%;" />
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_product }}" placeholder="您想注册/购买的商标" />
+                <van-field value="{{ intention_name }}" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a" custom-style="font-size: 18px;" block>提交</van-button>
+            </view>
+        
+        
+            <view class="ta-c mt20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+
+</view>

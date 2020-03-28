@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-loading": "@vant/weapp/loading"
+  },
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
+}

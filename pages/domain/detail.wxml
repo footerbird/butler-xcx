@@ -1,0 +1,55 @@
+<wxs src="../filter.wxs" module="filter" />
+<view style="height: 100%;">
+
+    <view class="container">
+
+        <block wx:if="{{ page_loading }}">
+        <view class="loading-box ta-c">
+            <van-loading size="24px" vertical>加载中...</van-loading>
+        </view>
+        </block>
+        <block wx:else>
+        <view class="domain-detail">
+
+            <view class="info-top">
+                <view class="wx-h4">{{ domain.domain_name }}
+                    <block wx:if="{{ domain.is_onsale == 'unsale' }}">
+                    <view class="wx-font col-gray9 f20">（已下架）</view>
+                    </block>
+                </view>
+                <view class="summary">域名简介:{{ domain.domain_summary }}</view>
+            </view>
+
+            <view class="info-list">
+                <view class="wx-h4">whois信息</view>
+                <block wx:if="{{ domain.is_onsale == 'sale' }}">
+                <view class="wx-dl pt10">
+                    <view class="wx-dt">价格</view>
+                    <view class="wx-dd"><view class="wx-font col-base f16">
+                    <block wx:if="{{ domain.domain_price == 0 }}">议价</block>
+                    <block wx:else>{{ filter.number_format(domain.domain_price) }}元</block>
+                    </view></view>
+                </view>
+                </block>
+                <view class="wx-dl"><view class="wx-dt">域名分类</view><view class="wx-dd">{{ domain.domain_type }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">委托机构</view><view class="wx-dd">外推网</view></view>
+                <view class="wx-dl"><view class="wx-dt">注册日期</view><view class="wx-dd">{{ filter.date_format(domain.created_date) }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">过期日期</view><view class="wx-dd">{{ filter.date_format(domain.expired_date) }}</view></view>
+                <view class="wx-dl pb10"><view class="wx-dt">距到期</view><view class="wx-dd">{{ domain.expired_distance }}天</view></view>
+                <view class="ta-c pb50">
+                    <block wx:if="{{ domain.is_onsale == 'sale' }}">
+                    <view class="pub-btn-blue">在线咨询</view>
+                    </block>
+                </view>
+            </view>
+
+        </view>
+
+        <view class="f14 col-gray9 lh20 mt10 bg-white" style="padding: 15px;">
+          本页详细列出关于{{ domain.domain_name }}域名的出售信息，
+          含域名分类、域名注册日期、域名过期日期、域名到期天数、域名出售价格、域名简介含义信息。</view>
+        </block>
+
+    </view>
+
+</view>

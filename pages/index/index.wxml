@@ -1,0 +1,103 @@
+<view style="height: 100%;">
+
+    <view class="header"></view>
+    <view class="container">
+        
+        <swiper class="entry-banner" indicator-dots="true"
+            indicator-color="rgba(255,255,255,.2)" indicator-active-color="rgba(255,255,255,1)"
+            autoplay="true" interval="2000" duration="500" circular="true">
+            <swiper-item>
+                <navigator class="swiper-slide" url="/pages/intention/domain">
+                    <image src="/assets/images/ad/ad-domain-entrust.png" />
+                </navigator>
+            </swiper-item>
+            <swiper-item>
+                <navigator class="swiper-slide" url="/pages/domain/list">
+                    <image src="/assets/images/ad/ad-domain-market.png" />
+                </navigator>
+            </swiper-item>
+        </swiper>
+        
+        <!--专题版块-->
+        <view class="entry-subject">
+             <view class="entry-subject-grids">
+                <navigator class="item" url="/pages/intention/domain">
+                    <view class="wx-span" style="padding-right: 15px;">
+                        <view class="wx-i user"></view>域名经纪
+                    </view>
+                </navigator>
+                <navigator class="item mid" url="/pages/intention/mark">
+                    <view class="wx-span">
+                        <view class="wx-i fire"></view>商标注册<view class="wx-i hot"></view>
+                    </view>
+                </navigator>
+                <navigator class="item" url="/pages/brand/list">
+                    <view class="wx-span" style="padding-left: 15px;">
+                        <view class="wx-i crown"></view>品牌大全
+                    </view>
+                </navigator>
+            </view>
+            <view class="entry-subject-topic">
+                <navigator class="company" url="/pages/company/list">
+                    <view class="title">企业名录</view>
+                    <view class="wx-h2">一站式品牌管家</view>
+                    <view class="wx-h3">企业新时代名片</view>
+                </navigator>
+                <view class="company-flex">
+                    <navigator class="domain" url="/pages/domain/list">
+                        <view class="title">域名市场</view>
+                        <view class="wx-h2">让网站更好记</view>
+                        <view class="wx-h3">品牌大数据，全网监控</view>
+                    </navigator>
+                    <navigator class="mark" url="/pages/mark/list">
+                        <view class="title">商标市场</view>
+                        <view class="wx-h2">好产品的出路</view>
+                        <view class="wx-h3">一站式商标解决方案</view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+
+        <!--精准的客户定位-->
+        <view class="home-topic home-topic-target">
+            <view class="intro-box">
+                <view class="wx-h2">精准的定向能力</view>
+                <view class="wx-p">我们根据用户的地理位置、使用设备、活跃时间以及用户的操作习惯为您描绘出精确的用户画像，帮助您选择合适的品牌营销群体</view>
+            </view>
+            <view class="image-box">
+                <image mode="widthFix" src="/assets/images/home-topic-target.png" />
+            </view>
+        </view>
+
+        <!--多样的营销方式-->
+        <view class="home-topic home-topic-types">
+            <view class="intro-box">
+                <view class="wx-h2 col-white">多样的营销方式</view>
+                <view class="wx-p col-white">我们提供首页开屏广告、翻页刷屏广告、品牌资讯报道、品牌活动发现频道以及品牌助力拼团等多种营销方式，
+                帮助企业将信息推送给真正有兴趣的用户</view>
+            </view>
+            <view class="image-box">
+                <image mode="widthFix" src="/assets/images/home-topic-types.png" />
+            </view>
+        </view>
+
+        <!--专业的品牌管理-->
+        <view class="home-topic home-topic-manage">
+            <view class="intro-box">
+                <view class="wx-h2">专业的品牌管理</view>
+                <view class="wx-p">我们拥有来自域名、商标、知识产权等行业的专业品牌保护团队，
+                可以解决在品牌建设中会遇到的各种各样的问题，从而帮助企业树立良好的企业形象、打造品牌优势、发展品牌战略。</view>
+            </view>
+            <view class="image-box">
+                <image mode="widthFix" src="/assets/images/home-topic-manage.png" />
+            </view>
+        </view>
+
+        <view class="home-copyright">
+            <view class="wx-p">Copyright © 2020 外推网 All Rights Reserved.</view>
+            <view class="wx-p">浙ICP备19041362号-1</view>
+        </view>
+
+    </view>
+
+</view>

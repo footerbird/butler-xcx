@@ -1,0 +1,353 @@
+@charset "utf-8";
+/* CSS Document */
+view {
+    margin:0;
+    padding:0;
+    .border-box;
+    &:before,
+    &:after{
+        .border-box;
+    }
+}
+navigator{
+    margin:0;
+    padding:0;
+    .border-box;
+    &:before,
+    &:after{
+        .border-box;
+    }
+}
+page{
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    font-family: -apple-system-font,arial,verdana,helvetica,'PingFang SC','HanHei SC',STHeitiSC-Light,Microsoft Yahei,sans-serif;
+    background: #f7f7f7;
+    height:100%;
+}
+image{
+    display: block;
+}
+
+/*
+ * public 公共CSS
+ * aothor xufeng
+ * date:2019-08-10
+ * public Begin
+ */
+
+/*变量*/
+@base-color: #ea6f5a;//基本色号
+@my-color: #13426b;//控制中心色号
+
+
+
+/*常用的一些混合*/
+.ellip{//超出隐藏或换行
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.after-cls{//清除浮动
+    &:after{
+        content: " "; display: block; height: 0;
+        visibility: hidden; clear: both;
+    }
+}
+.display-flex{//flex布局
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.flex-number(@num: 1){
+    -webkit-box-flex: @num;
+    -webkit-flex: @num;
+    flex: @num;
+}
+.border-box(){//盒模型
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.border-radius(@radius: 0){//边框圆角
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+.opacity(@opacity: 1){//透明度
+    @opacityPercentage: @opacity * 100;
+    filter:alpha(opacity=@opacityPercentage);
+    -moz-opacity: @opacity;
+    opacity: @opacity;
+}
+.transition-all(@time: .2s){//动画过渡
+    -webkit-transition: all linear @time;
+    transition: all linear @time;
+}
+.forbid{//禁止点击
+    opacity: .8 !important;
+    cursor: not-allowed;
+}
+
+
+/*字体大小*/
+.loop-fontsize(@n, @i: 12) when(@i <= @n){
+    .f@{i}{
+        font-size: 1px * @i !important;
+    }
+    .loop-fontsize(@n,(@i+1));
+}
+.loop-fontsize(32);
+
+/*字体粗细*/
+.fb{font-weight: bold !important;}
+.fn{font-weight: normal !important;}
+
+/*水平对齐方式*/
+.ta-l{text-align: left !important;}
+.ta-c{text-align: center !important;}
+.ta-r{text-align: right !important;}
+
+/*垂直对齐方式*/
+.va-s{vertical-align: sub !important;}
+.va-m{vertical-align: middle !important;}
+.va-t{vertical-align: top !important;}
+.va-b{vertical-align: bottom !important;}
+.va-tt{vertical-align: text-top !important;}
+.va-tb{vertical-align: text-bottom !important;}
+
+/*长度*/
+.loop-width(@n, @offset: 1, @i: 1) when(@i <= @n){
+    .w@{i}{
+        width: 1px * @i !important;
+    }
+    .loop-width(@n, @offset, (@i+@offset));
+}
+.loop-width(50);
+.loop-width(200,10,60);
+.loop-width(1200,50,250);
+
+.w-all{width: 100% !important;}
+.w-auto{width: auto !important;}
+
+/*高度*/
+.loop-height(@n, @offset: 1, @i: 1) when(@i <= @n){
+    .h@{i}{
+        height: 1px * @i !important;
+    }
+    .lh@{i}{
+        line-height: 1px * @i !important;
+    }
+    .loop-height(@n, @offset, (@i+@offset));
+}
+.loop-height(50);
+.loop-height(200,10,60);
+
+/*margin外边距*/
+.loop-margin(@direct, @n, @offset: 1, @i: 0) when(@i <= @n){
+    .mt@{i} when(@direct = top){
+        margin-top: 1px * @i !important;
+    }
+    .mb@{i} when(@direct = bottom){
+        margin-bottom: 1px * @i !important;
+    }
+    .ml@{i} when(@direct = left){
+        margin-left: 1px * @i !important;
+    }
+    .mr@{i} when(@direct = right){
+        margin-right: 1px * @i !important;
+    }
+    .loop-margin(@direct, @n, @offset, (@i+@offset));
+}
+.loop-margin(top,50);
+.loop-margin(bottom,50);
+.loop-margin(left,50);
+.loop-margin(right,50);
+
+.m-auto{margin: 0 auto !important;}
+.margin0{margin: 0 !important;}
+.margin2{margin: 2px !important;}
+.margin5{margin: 5px !important;}
+.margin10{margin: 10px !important;}
+.margin15{margin: 15px !important;}
+.margin20{margin: 20px !important;}
+
+/*padding内边距*/
+.loop-padding(@direct, @n, @offset: 1, @i: 0) when(@i <= @n){
+    .pt@{i} when(@direct = top){
+        padding-top: 1px * @i !important;
+    }
+    .pb@{i} when(@direct = bottom){
+        padding-bottom: 1px * @i !important;
+    }
+    .pl@{i} when(@direct = left){
+        padding-left: 1px * @i !important;
+    }
+    .pr@{i} when(@direct = right){
+        padding-right: 1px * @i !important;
+    }
+    .loop-padding(@direct, @n, @offset, (@i+@offset));
+}
+.loop-padding(top,50);
+.loop-padding(bottom,50);
+.loop-padding(left,50);
+.loop-padding(right,50);
+
+.padding0{padding: 0 !important;}
+.padding2{padding: 2px !important;}
+.padding5{padding: 5px !important;}
+.padding10{padding: 10px !important;}
+.padding15{padding: 15px !important;}
+.padding20{padding: 20px !important;}
+
+/*color颜色*/
+.col-gray3{color: #333 !important;}
+.col-gray6{color: #666 !important;}
+.col-gray9{color: #999 !important;}
+.col-white{color: #fff !important;}
+.col-red{color: red !important;}
+.col-orange{color: #f60 !important;}
+.col-green{color: #4eb470 !important;}
+.col-blue{color: #3daaef !important;}
+.col-warn{color: #d2434a !important;}
+.col-base{color: @base-color !important;}
+.col-my{color: @my-color !important;}
+
+/*背景颜色*/
+.bg-gray3{background-color: #333 !important;}
+.bg-gray6{background-color: #666 !important;}
+.bg-gray9{background-color: #999 !important;}
+.bg-white{background-color: #fff !important;}
+
+/*定位position*/
+.pos-fixed{position: fixed !important;}
+.pos-rela{position: relative !important;}
+.pos-abso{position: absolute !important;}
+
+/*display显示方式*/
+.none{display: none !important;}
+.block{display: block !important;}
+.in-block{display:inline-block !important;}
+
+/*浮动float*/
+.fl-l{float: left !important;}
+.fl-r{float: right !important;}
+.clearfix{clear: both !important;}
+
+
+/*布局*/
+.header{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .header-container{
+        position: relative;
+        background-color: #fff;
+        width: 100%;
+        height: 45px;
+        .display-flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f1f3f4;
+        .back-text{
+            font-size: 16px;
+            color: #3d464d;
+            display: inline-block;
+            height: 45px;
+            line-height: 45px;
+            padding: 0 15px;
+        }
+        .save-text{
+            font-size: 16px;
+            color: #3d464d;
+            display: inline-block;
+            height: 45px;
+            line-height: 45px;
+            padding: 0 15px;
+            &.forbid{
+                color: #999;
+            }
+        }
+        .wx-h4{
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 50%;
+            height: 45px;
+            line-height: 45px;
+            margin-left: -25%;
+            font-size: 16px;
+            font-weight: normal;
+            text-align: center;
+            .ellip;
+        }
+        .back-icon{
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAA1ElEQVRYhe3WsQ3CMBCF4XcWjlJmE1aATVylZ5vIDR6BDRCbZATKKClMRUlEcc8C6X0DnH+5sA8QERERkV3GPiClNHRddw0hXKZpmj1mHjyGfJJSGmKMdwC2LMvTay7tpt/BZmbrup5KKb8dzQwGCNHsYMA5ukUw4BjdKhhwim4ZDADBY0iM8dYqGHCKNrO51lo9Zn11ntegcRxLrfW4bduZfduur0ercPd3ukU45Udkh9N2D2Y4dTVlhdP3aUa4yzu9J+ecADz6vh/YZ4mIiIjIP3sBb6mWp5MTywgAAAAASUVORK5CYII=) no-repeat;
+        }
+        .home-icon{
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjM0QjMzRkIyRjk3MTFFQUI5NTE5NjM5MEU1NjE2QjEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjM0QjMzRkMyRjk3MTFFQUI5NTE5NjM5MEU1NjE2QjEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyMzRCMzNGOTJGOTcxMUVBQjk1MTk2MzkwRTU2MTZCMSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyMzRCMzNGQTJGOTcxMUVBQjk1MTk2MzkwRTU2MTZCMSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PruqJZYAAAGNSURBVHja7Je9SgNBFEZdtckD5CGsQtBKTSOIprEINgpbyhIhrQTsBbESBF2wtoimsNFVsfKnSekb+BQaMOt34SvCou5EZibK3oHDZSf3zpzMJrM7QZqmE/+tBSqt0iqt0iqt0ipdWOkoir7qXgdnYBNc/FQfx/HIc046WIgGOAcvjA3bE9iWXgNdsAdmGbvst9amLY61Ai7BPthln8Qp9q+Cm78kLcIJOADtzGdt3tHElrgN6WVwBY7Azjc50l9inojfjU0aO8c8wi04Bq2c9BZ/KpK/AJ69S0N4EeEBnIBtwzLJC8ATqIFHb9IQlpW6B6egOWJ5k/NK/RK/gNstD8JznLCDB8PWL2+U1HVkHI7nfJ/uyd4L4ZDX8scqG9aWmS8t5B7e8yFd54Sy6hKvQcWwtsL8cEi87vw3jRVOhi5nGPuG5f1M3SAznpfH+LvnOmcvTM5boaXfLOc5ffcoMVaByWmimqkbi7ScSjbAId8r8toHeM07zegZUaVVWqVVWqVVWqVVuojSnwIMAOmFnfGu4nhtAAAAAElFTkSuQmCC) no-repeat;
+        }
+    }
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    .loading-box{
+        width: 100%;
+        height: 100%;
+        padding-top: 50px;
+        background-color: #fff;
+    }
+}
+
+/*公共按钮*/
+.pub-btn{/*默认高度36，中型按钮，颜色#ea6f5a默认色*/
+    display: inline-block;
+    height: 36px;
+    line-height: 38px;
+    font-size: 14px;
+    color: #fff;
+    background-color: @base-color;
+    text-align: center;
+    padding: 0 15px;
+    .border-radius(3px);
+    .transition-all;
+    &:hover{
+        .opacity(.8);
+    }
+}
+.pub-btn-blue{
+    .pub-btn;
+    background-color: #77abeb;
+}
+
+/*企业详情页base64背景图片变量，为了防止eslint报错Maximum allowed is 100  max-len*/
+.company-ico-tel{
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAEfElEQVRYhe3Ye4hVVRTH8c+IBhZBE9UE/RHokGZYf5hZKWahUZHZUIREZWJ50jQwegqSGCQURmBkWzMqjLAHPgoNeiilvcwCw0jUCCF7CRFF9sLpj33PzL7X+5q5Z+yffnBhrXP33vd7z9l7nbUW/+vYqC03Zs+eXWvMtbgFEzAY2/A6VhUJEkJoOKatLeIOqjNmPHZhHbpwKtoxFSuxF5NbQ+2fakFPE+/o6DpzO/EWbigaqpGqQV+D9Yn/C+7BaTgZM/B98v1aTBogvqqqhL4MGxJ/P8ZhGX7Cz3gBY/BlMm61+k+lUFVCr0jsr3EJ9lSZdxBX4lDJH1Yxd0CVQk/HWSX7R1yOb+vMPYBZ6C754zG2aMBqSqEvTewl4tZopI14OfHnFAHVSCn0hMTe0oc1FiX21NZwmlMKfUpiH6ocWEd78VWyxshWoRophf41sU/s4zqHE3to/3GaUwq9L7E7+7BGB85J/N0tETWhFPqjxL6wD/NX4biS/wn+KoCr4Y/m2pbYVzQ5/ynlh29hy0RNKIV+J7HH4cwGc+9HlvgLK9YYMKXQ3dhestsqgKppVGI/iaUFctVV5Wv8wcS+HSfUmZvmKHPFfOSYqBL6feUx9846c9fhs2Sd/yT3yPVAhd1eY243ZuLPkj8WzxSHVlvVoDfojbXtYh5SS7twV+LPwqPFoNVWrcrl3sSeq37cXoknKuYuqjG2ENWC3owPkjHP4fg66ywQi4NcSwwgeL3Cdg5+K9kj8HiDtWaKhzPXEjzWYM5gnIvhDcaVqVEL4Tq8mvgzlN/RSg0Ra8au5Npq3FYxbpIY19Nt9x02YUUIYWdV2FILoZm+x3LMK9mHMRGf1gEfhGfFP5hrh/jkdop7vtFh3Y45IYQvqkHX2x655uuNx0Pxhvqv+CO4VfnhHCsmU0srgP8RI1BllTQe67Msm1TtB5qBhjvwR8nuwNvKi4ZqWiCmAnkcH6T8HbBZ/PPnianwSHFr5TXnMGzJsuyovkqz0DtwdeJ34t0mwFfiAr1PKteLpfUO5hdCCHtCCNPFNlxaOa3NsmxKf6CJGVx6wEY3Cb4L5+N6rMFDYm/wSLXBIYSNju6rlKUIfYEmdp5uTPzR+FDjNLYbr+FmMRRWBc4VQjiAKWJEgeFZlvVknX2FhpeUg3fiY/FuFqYQwkHcl1yalhv9gSaCp1ulA++Jj71IpelvT4ujv9DErTJZb1QZiufxtOIq8iGJ/XdutAJNPJwTlUeHDJ+LUaNV3ZTYPTVsq9DEcDhGLLlyjRAP6HKc1J9FsywbjsXJpTW5UQR0rvliWPs9WXue+La7W/3SrUxZlp2BN/UWILtDCK/k3xcJTQxrF+lNa4mN+GX4Bg9rEB5LwFuVN4zKGpvNJEz91VViajqq4nq3GCLznH2/2KzvELO/xTg9Gd8VQlhPb8I0uGjSRJtKny48orcx2SampM10sXqAUxW9PappHc4W+9/bG4zNtQ9TqgEzsHe6UlvFF0SbGN8n4GKxamnHD2JY2xpCWFNjjf91TPUv8hnov7qY358AAAAASUVORK5CYII=) no-repeat;
+}
+.company-ico-email{
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAADdklEQVRYhe3YT2hcVRSA8d8kwT/BUiy0q7hqXFjqQhdtQaQgFqlFS+qmEosgOA+hbqpGUaqjgpSGrKTIheJGqxs1RlGJiy5U0IoIImSVZXBh0VAjSpUQF/dO8jp5M5M3mXEU8m3enDPnvPfx5t7zZoYtttii71Sq1SpM4Cns6q9OS37GVAjhbKUarUO/jUrw6ACe7rdFSV4YwmiTNxcwhu96aRDC+g85y7I78SFuKWi5dQCVXGICy+n1CL7EI93VbE2WZeP4yprwcvKqUxlo6JnEESym+Aa8hSkM9k6VLMsGsyybwtu4MaUXcSSEMJmvbZSGWezDXC53Cp9hR/d1ybJsRzr/qVx6DvtCCLON9UXSMI8DmM7lDuFb7O2OaiTLsr3pvIdy6RkcCCHMF/U0k4YlPISXsJJyu/G1uEG7wVg63+4Ur6CGsRDCUrOmoTYnXcEr+EFc29twE97Hq+kCK82aW1BJvaetDYIlnAghzLRrbnWn88yIy6X+cVXworh8tpWQleqnU39deF5cDm2F2bg0aWOIG7XOUXyj+axvZDTVH83lZsUNN1fcsp4y0qQRJI7GOnvEjXS4Te99qW5PLjcpjrTF4pZiykqzNuzH8XfK3YyP8axrH1ZS/Aw+SXXwZ+qfCCEsK0kn0nV+d+0DZxBn8A6GU244xWcbar8XN3NHdCq9H+/m+n/LvXdcfAzfnY7HC/rvEjfj9Z1cvBPpUXEp1O/mPG7DuVzNHfgiHeucE8dkncOYzrKstHhZ6Z3i43Znii+ni/+Ek3gcVxt6rqb8SXHMvZx7ryPxMtLD4h2uj7c/8IC12Q3ncVC8y5fT8WDK16ltVnyj0oPiGt6f4mU8jEsFtZeS6K50LKqp2YT4RqVfx4O5+El8tMHeZtR0KL4R6efwRC4+gzfK2LWgpgPxdtLjeC0XX8Dzndg1I4RQU1K8lfQ9eNPaE+4iHtPZt7qWlBVvJn07PsB1Kf4Rx/BXdzTXU0a8SHoEn2J7ihdwP650V3M9GxVvlN4uCo+k+IoovNAbzfU0E8/XNEq/Jy4N4lI4Ji6Nf5Um4qs0St+bjiviprvYM7M2FIiv0mwj1sTx1leaiRdJX3Dtt7G+UiTeKP25Hs3izZDEV6lUq9Vf9Oifox7x64D4f8b/ifND4o/UCk5Y++H5X2RRvMGn+y2yxRZb4B8ymOTnEg9aWQAAAABJRU5ErkJggg==) no-repeat;
+}
+.company-ico-address{
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxNWQxOGMwOC0xNDJhLTQ1MDctYTkzZC1hNTNkMTNiZjQ5ZDkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MEZFOTRBQkZGQ0IyMTFFNjgyQjRFMzBDNzNCRDIxQTkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MEZFOTRBQkVGQ0IyMTFFNjgyQjRFMzBDNzNCRDIxQTkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowODFmZWQ3Ny0zNjg5LTRmNjAtODdmOC04ZGU3ZmI0MDBhN2IiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo1NWJkM2UyNS00MmMyLTExN2EtOWJlMC05YmU4NTNmZDEwYzIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4XvabTAAAFAUlEQVR42syZe4hVVRTGj6NNPqbMzJ4aSUVlZDkGORVmQQ/siaSglaakYzUjpeVkaWSNSQllacxMamKRWiphZu8s/5DeLy0rrCgKbVLy0Tj5vn2Lvg0fh3v2Oefec4cW/GDvO+fs+91z1lp7rT3tcrlc4Ky6ujpIaX3AVeBCcBY4AXQFe8Au8CP4GrwP3gItaRZvamrK+3mHIL0dBm4GE8B5Edd0JseDi8GdYDdYDmaBb4MirCzl9VeDjeA5j+Ao6wJGgfW8/5hSi+5obwu8Bk6Tz/8BL4Nx4HzQg2+vAvQCV4J6sCH0naP52aWFiE7iHkeDlXzNzv4Cj4NGsDPPPbvJ7+BtMA0MAFPAdbzGXOcdCyWwIMsnbUH1XkjwUnAGeCxCcJR9BK4H14Bt/Kw9mAduz0q0/e0l8d1D4C4wXL60EFsNLgDfcN4OzKErFS26ThayvDgWPBVkYz8zTX4sT/wFcFwxoi3YHpT5TEZ8lvY3/Xsz5xbETxQjup4Zw+yT0A/I0v4EI2U+glkodfY4FQwVt6gFBxMI6A8uBz1BK1PaamYan1mgL5PvvA/cmFb0aHkDb/BJ+8y27wZwSZ6/tXAHfBQc8KzxCIVaUF7LjWdbGvfQX/lsjGDLAh9GCA64yUwHKxhsUbaB65iVSy5PJPpE5mC3272ZYNPpyvk+sBDUgKngK7nWRDwc8wBekfFlaURrPWFusddz772SorYygMaAZ8AMUEnXcDaRVWCUrZXxuWlEny7jjTFPZoSMq0P1hQviOnntlo2GeNb7PkJHrOijQukoyrqDkzm2uvnViOty3DSc9YvJ260cHw46JRXdUcb7PV9QIePtMSlRs8CRMW9P12mfVHSzjE/yLN7MWsRd191zbV8Zb455EEdIldiSVPR6GVd5vmCP+Krl+vsjrjsWjJf5Gs+aVRH+HSt6HVOdyyS9PffOkfHd3EC6yGeVFOk6lJ+4WUXZDTJ+N43ovSzadXeMMutYVkl5OYXB+wUb2s/B2eKrt3nipBNLXmer0hZM82U8lg1qVGawBvf1UEPbj/WLupL1hh94dNwKuolrrEsr2nbBX6QlqvHcv4u1wpg8edqCaTE4B7wY038+IPPGQkrTA2ylnE2OSVWHuH335Y5XyfMQ8+Wb6Co+Gy+ZqjlBvRNZT1vB/5tsJHUJ6+M/wJfgO7pFnHULZZ5ZkghSi7biZ5LM7wFnlqAJmMmOxewHMLfYHnEZW3xXLjYwS2RlAxjozmpjCrTERwgTZKFBjPIsrJyHP2V5HlDRoi39PCnz2eCUDERPl+29hWVrpsdi1gptkoJnYQFngGoXsRZ3NpUnUZmKbmXq2i9uMqlAwfajF0kFZ7vv06U6gPwUPBQ6YqgqQPQ82S23MkZypRIdcMNZK4G0NKYkDZudUQ+TudUiWwp5XWlEH2QNsYNz61yeT5gG+4dOjxo93U6mos1+pX+7BmBwyG3yWQ922uWcfxb8d5AZtJXogFWdHgdM8zSsJtT+ZdFL/HhI0k0kS9EBRWstvYjVXNjslHWguNcwqWnaXLRF/C2Svyv4BvRcoybUak2OqalLLtpsJ33aHTD2pO925onSbLl2QZDwGLfUogPWykNZFbqzPesDl8gGYn3iHVmWhmUZrGGixsl8oLRomxh4+/5vogMGYn2ehmBwkO6fSW0q2qW+BvH3KxK0WgVZh4zXq2Vv2Jin0c3M/hVgAMavCKyaLEGTAAAAAElFTkSuQmCC) no-repeat;
+}
+.company-ico-legal{
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAMAAAANxBKoAAAAe1BMVEUAAABmZmZdXV1lZWVkZGRmZmZmZmZlZWVlZWVlZWVhYWFlZWVlZWVmZmZlZWVmZmZmZmZmZmZlZWVlZWVkZGRkZGRkZGRlZWVlZWVmZmZmZmZjY2NlZWVlZWVmZmZmZmZlZWVkZGRjY2NlZWVlZWVlZWVlZWVlZWVmZmbOt6O1AAAAKHRSTlMA+wXoEeLsoI1sC9LIPTH38pBKQjciGdmbh18duap6dFUsJsBbRoFjEHy5FwAAAYJJREFUSMe9VNmSgjAQlCAICHLJIV54rfP/X7idsrQCmcnWPuz2G5Om58h0Fv8KVa3WvkfU7S4/k58hveH1Sze3TclEmLnIWx+UIHo0qqnKQMsPMvlS4LxM3g08c3xuJPISyr6ZexMiUyKwd5ZUjdlEgjQSnxiBPcuOkVbNYgmKi1n2jejLCkZEB5aNGrdWsMbQ2bIx3taKNogqhn1FnNfg2my1NqvBbYuS6s7ZLlNhJjeWffrVvFuPvctcWPLe2pMMAqVrB68mWd5BYAupYlDvn5GLciSTMHqGd7SPinrhwL0gE4Hb9kk/YcN1DsQhTeHLLt6sX4wyHusxjl5fR2HcVU7Aofrc5z7STXctS9ZHaWZnC5iNbfQ0Vmq+mEdE11avqkP4zD4bEJkHzyS9HCucZLMVKXhvAypFLZa0d5W2B+LjJNLp4iQcZ/65kPakhHrm+1i/MSIU9mEwc30KkcbSm3b/zFry92Ha5N3BHrASxmegL0DGYzrx2HOVjQtC6r/GNzkFMuS1iuMrAAAAAElFTkSuQmCC) no-repeat;
+}
+.company-ico-capital{
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAMAAAANxBKoAAAAh1BMVEUAAABmZmZlZWVjY2NmZmZlZWVlZWVlZWVlZWVmZmZmZmZlZWVlZWVlZWVlZWVkZGRPT09lZWVmZmZlZWVmZmZlZWVmZmZlZWVlZWVmZmZlZWVmZmZlZWVlZWVlZWVlZWVjY2NlZWVmZmZmZmZlZWVlZWVjY2NkZGRlZWVlZWVlZWVlZWVmZmbHqkE3AAAALHRSTlMA6L8H++TtcCgf9F4UxKJABNaAWlVKD/nOtI57dkU9GjHeZlCThzctm6jbJszuKIAAAAI9SURBVEjHpVRZgqpADJQdZRNGQWR113l1//O9JDJIKzAfUz/dHcumkkp68Vc0tVc43rb9nbmu7ho6rILLdZZ71KAiLtMp8ukgDNOOA13XVxBom1FuGsqP+8roAm0ZCD/3P8kui7AdQwkuk4xvuL2TbzaFw/Tzkh3nu1WDLanMTqMK95xKrWg+UGQ7kfzRJDGiPXoGdAB08wS+AOi0nks5enQsZnw4A/AWD4hZhgXks65RqlYOrPlQUtZNXzSn6XfuT7AG4yB7a6CjsWEvn2QbpstrrpkQ6JIpYKbDjALZBSxWhBYZBCGf7sDj1a5sqUMbh631O4tiYe95T7UedE5F4cxduHxf74AhPZTQzqe1efNuZ+z4LtUi+eSWnHovF2L5i9IblrCvwHkQNSIPT3iRr/Sj5YhSbz0IxnjBVtv3Szl2vr4QjPTM8iO0IebHRdtKfLcUuh9FUULsC61D3RfgKjZY7UDJaqh7UBWNyy+mZcdX/UIad840pvXyIjcU4k8l0gLGL7pPwHfnHV/lzrMfwJ3XEIJVYcywUzK+fs6kwNTyvjauCfOfwi4Aq5sFRq3WtlTJDVWqlJIBOf1ht17MIKerRWiNUGb+PEMu+jyKc6d9M0k+yUwKRLCvUZrHCXJlAgflhaxNbo1R8iaj8t7eOmzF0+KOv+r255Os8fgmavsaDke1t0tEe/6cAKf9oVZ78SJMxxXaXaMGuh7EtimHw+Tb65ffUGEdZ1277oN+HrR7Jdx5tF5C8NzFH/Ef8otVuWpvYDwAAAAASUVORK5CYII=) no-repeat;
+}

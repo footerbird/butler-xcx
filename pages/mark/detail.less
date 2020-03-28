@@ -1,0 +1,156 @@
+/*变量*/
+@base-color: #ea6f5a;//基本色号
+@my-color: #13426b;//控制中心色号
+
+
+
+/*常用的一些混合*/
+.ellip{//超出隐藏或换行
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.after-cls{//清除浮动
+    &:after{
+        content: " "; display: block; height: 0;
+        visibility: hidden; clear: both;
+    }
+}
+.display-flex{//flex布局
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.flex-number(@num: 1){
+    -webkit-box-flex: @num;
+    -webkit-flex: @num;
+    flex: @num;
+}
+.border-box(){//盒模型
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.border-radius(@radius: 0){//边框圆角
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+.opacity(@opacity: 1){//透明度
+    @opacityPercentage: @opacity * 100;
+    filter:alpha(opacity=@opacityPercentage);
+    -moz-opacity: @opacity;
+    opacity: @opacity;
+}
+.transition-all(@time: .2s){//动画过渡
+    -webkit-transition: all linear @time;
+    transition: all linear @time;
+}
+.forbid{//禁止点击
+    opacity: .8 !important;
+    cursor: not-allowed;
+}
+
+
+
+.mark-detail{
+    .info-top{
+        margin-top: 10px;
+        background-color: #fff;
+        padding: 15px;
+        .thumb-box{
+            float: left;
+            width: 240rpx;
+            height: 210rpx;
+            line-height: 210rpx;
+            text-align: center;
+            border: 1px solid #e5e5e5;
+            .thumb{
+                display: inline-block;
+                max-width: 230rpx;
+                max-height: 200rpx;
+                vertical-align: middle;
+            }
+        }
+        .thumb-right{
+            margin-left: 280rpx;
+            height: 210rpx;
+            .wx-h4{
+                font-size: 28px;
+                font-weight: normal;
+                color: #5195d5;
+                height: 120rpx;
+                line-height: 120rpx;
+                .ellip;
+                .status{
+                    display: inline-block;
+                    font-size: 13px;
+                    color: #fff;
+                    height: 24px;
+                    line-height: 25px;
+                    background-color: #77abeb;
+                    padding: 0 10px;
+                    margin-left: 10px;
+                    vertical-align: 3px;
+                    .border-radius(2px);
+                }
+            }
+            .price{
+                font-size: 20px;
+                font-weight: normal;
+                color: @base-color;
+                line-height: 90rpx;
+            }
+        }
+        .wx-table{
+            margin-top: 15px;
+            .wx-tbody{
+                .wx-tr{
+                    .display-flex;
+                    .wx-td{
+                        .flex-number;
+                        font-size: 13px;
+                        line-height: 24px;
+                        .ellip;
+                        image{
+                            width: 80px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .info-list{
+        margin-top: 10px;
+        background-color: #fff;
+        padding: 0 15px;
+        .wx-h4{
+            font-size: 16px;
+            font-weight: normal;
+            height: 48px;
+            line-height: 50px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .wx-dl{
+            .after-cls;
+            .wx-dt{
+                float: left;
+                width: 160rpx;
+                font-size: 13px;
+                color: #999;
+                line-height: 24px;
+                padding: 3px 0;
+            }
+            .wx-dd{
+                margin-left: 160rpx;
+                font-size: 14px;
+                color: #333;
+                line-height: 24px;
+                padding: 3px 10px;
+            }
+        }
+    }
+}

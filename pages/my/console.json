@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell",
+    "van-button": "@vant/weapp/button",
+    "van-toast": "@vant/weapp/toast"
+  }
+}

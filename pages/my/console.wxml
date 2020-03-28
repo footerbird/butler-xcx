@@ -1,0 +1,129 @@
+<view style="height: 100%;">
+
+    <block wx:if="{{ userinfo !== null }}">
+    <view class="account-header">
+        <navigator class="wx-a account-header-sign {{ userinfo.is_signed ? 'signed' : '' }}">
+            {{ userinfo.is_signed ? '挖矿中' : '挖矿' }}
+        </navigator>
+        <view class="account-header-info">
+            <navigator class="wx-a account-header-figure">
+                <block wx:if="{{ !userinfo.user_figure }}">
+                <image src="/assets/images/user-figure.png" />
+                </block>
+                <block wx:else>
+                <image src="https://m.waitui.com/{{ userinfo.user_figure }}" />
+                </block>
+            </navigator>
+            <view class="account-header-name">
+                <view class="wx-h4"><navigator class="wx-a">{{ userinfo.user_name }}</navigator></view>
+                <view class="wx-p"><navigator class="wx-a">点击查看或编辑个人信息</navigator></view>
+            </view>
+        </view>
+        <view class="account-header-tab">
+            <navigator class="wx-a">
+                <view class="wx-h4">{{ user_balance ? user_balance : '--' }}</view>
+                <view class="wx-p">钱包</view>
+            </navigator>
+            <navigator class="wx-a">
+                <view class="wx-h4">{{ user_score ? user_score : '--' }}</view>
+                <view class="wx-p">W币</view>
+            </navigator>
+            <navigator class="wx-a">
+                <view class="wx-h4">{{ unreadCount ? unreadCount : '--' }}</view>
+                <view class="wx-p">未读</view>
+            </navigator>
+        </view>
+    </view>
+    
+    <view class="mt15">
+        <van-cell title="我的订单" value="{{ orderCount }}" is-link />
+        <van-cell title="我的域名" value="{{ domainCount }}" is-link />
+        <van-cell title="我的商标" value="{{ markCount }}" is-link />
+    </view>
+    
+    <view class="mt15">
+        <van-cell is-link >
+          <!-- 使用 title 插槽来自定义标题 -->
+          <view slot="title">
+            公司认证<text class="wx-span f14 col-gray9 ml15">(开发中)</text>
+          </view>
+          <view slot="default">
+            <block wx:if="{{ company_certify != '' }}">
+                <block wx:if="{{ company_certify.status == 'failed' }}">
+                <text class="wx-span f14 col-warn">认证失败</text>
+                </block>
+                <block wx:elif="{{ company_certify.status == 'wait' }}">
+                <text class="wx-span f14 col-gray9">认证中</text>
+                </block>
+                <block wx:else><text class="wx-span f14 col-green">已认证</text></block>
+            </block>
+            <block wx:else><text class="wx-span f14 col-warn">未认证</text></block>
+          </view>
+        </van-cell>
+        <van-cell title="登录日志" is-link />
+    </view>
+    
+    <view class="mt15">
+        <van-cell title="关于我们" is-link url="/pages/help/about" />
+        <van-cell title="用户协议" is-link url="/pages/help/agreement" />
+    </view>
+    
+    <van-button type="default" block
+      custom-style="color: #ea6f5a; margin-top: 15px;"
+      bindtap="logoutSuccess">退出登录</van-button>
+    </block>
+    
+    
+    <block wx:else>
+    <view class="account-header">
+        <navigator class="wx-a account-header-sign" url="/pages/my/login">挖矿</navigator>
+        <view class="account-header-info">
+            <navigator class="wx-a account-header-figure" url="/pages/my/login">
+                <image src="/assets/images/user-figure.png" />
+            </navigator>
+            <view class="account-header-name">
+                <view class="wx-h4"><navigator class="wx-a" url="/pages/my/login">登录 / 注册</navigator></view>
+                <view class="wx-p"><navigator class="wx-a" url="/pages/my/login">您的一站式品牌管家</navigator></view>
+            </view>
+        </view>
+        <view class="account-header-tab">
+            <navigator class="wx-a" url="/pages/my/login">
+                <view class="wx-h4">--</view>
+                <view class="wx-p">钱包</view>
+            </navigator>
+            <navigator class="wx-a" url="/pages/my/login">
+                <view class="wx-h4">--</view>
+                <view class="wx-p">W币</view>
+            </navigator>
+            <navigator class="wx-a" url="/pages/my/login">
+                <view class="wx-h4">--</view>
+                <view class="wx-p">未读</view>
+            </navigator>
+        </view>
+    </view>
+    
+    <view class="mt15">
+        <van-cell title="我的订单" is-link url="/pages/my/login" />
+        <van-cell title="我的域名" is-link url="/pages/my/login" />
+        <van-cell title="我的商标" is-link url="/pages/my/login" />
+    </view>
+    
+    <view class="mt15">
+        <van-cell is-link url="/pages/my/login" >
+          <!-- 使用 title 插槽来自定义标题 -->
+          <view slot="title">
+            公司认证<text class="wx-f14 col-gray9 ml15">(开发中)</text>
+          </view>
+        </van-cell>
+        <van-cell title="登录日志" is-link url="/pages/my/login" />
+    </view>
+    
+    <view class="mt15">
+        <van-cell title="关于我们" is-link url="/pages/help/about" />
+        <van-cell title="用户协议" is-link url="/pages/help/agreement" />
+    </view>
+    </block>
+    
+    <van-toast id="van-toast" />
+    
+</view>

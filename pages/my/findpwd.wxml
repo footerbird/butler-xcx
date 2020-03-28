@@ -1,0 +1,68 @@
+<wxs module="computed">
+var Valid = {
+  isMobile: function(str){ // 验证手机号码
+    var regexp = getRegExp('^1[3|4|5|8][0-9]\d{8}$','g');
+    return regexp.test(str);
+  },
+  isCode6: function(str){ // 验证手机验证码，6位数字
+    var regexp = getRegExp('^\d{6}$','g');
+    return regexp.test(str);
+  }
+}
+
+var forbid_code_btn = function(phone_find,sending_code){
+  return !Valid.isMobile(phone_find) || sending_code;
+}
+
+var forbid_findpwd_btn = function(phone_find,code_find,pwd_find,sending_findpwd){
+  if (Valid.isMobile(phone_find) && Valid.isCode6(code_find)
+    && pwd_find !== '' && !sending_findpwd) {
+    return false;
+  }
+  return true;
+}
+
+module.exports = {
+  forbid_code_btn: forbid_code_btn,
+  forbid_findpwd_btn: forbid_findpwd_btn
+}
+</wxs>
+<view style="height: 100%;">
+
+    <view class="container bg-white">
+
+        <view class="login-form">
+            <view>
+                <van-field value="{{ phone_find }}" type="tel" maxlength="11" clearable bindinput="phoneFindInput"
+                  class="login-input" placeholder="输入手机号"
+                  custom-style="font-size: 16px; height: 55px; line-height:55px; padding: 0;" >
+                    <!-- 这里的插值是为了让行高起效果 -->
+                    <van-button slot="button" custom-style="width: 0; min-width: 0; padding: 0; border: none;"></van-button>
+                </van-field>
+                <van-field value="{{ code_find }}" clearable bindinput="codeFindInput"
+                  class="login-input" placeholder="输入验证码"
+                  custom-style="font-size: 16px; height: 55px; line-height:55px; padding: 0;">
+                    <van-button slot="button" size="small" type="default" disabled="{{ computed.forbid_code_btn(phone_find,sending_code) }}"
+                      bindtap="sendCodeFindpwd"
+                      custom-style="font-size: 14px; border: none;">{{ code_msg }}</van-button>
+                </van-field>
+                <van-field value="{{ pwd_find }}" type="password" clearable bindinput="pwdFindInput"
+                  class="login-input" placeholder="重设密码"
+                  custom-style="font-size: 16px; height: 55px; line-height:55px; padding: 0;">
+                    <!-- 这里的插值是为了让行高起效果 -->
+                    <van-button slot="button" custom-style="width: 0; min-width: 0; padding: 0; border: none;"></van-button>
+                </van-field>
+            </view>
+            <view style="position: relative; padding-top: 120rpx;">
+                <van-button type="primary" color="#ea6f5a" custom-style="font-size: 18px;"
+                  disabled="{{ computed.forbid_findpwd_btn(phone_find,code_find,pwd_find,sending_findpwd) }}"
+                  block loading="{{ sending_findpwd }}"
+                  bindtap="funcFindpwd">完成</van-button>
+            </view>
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>
