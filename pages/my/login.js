@@ -133,6 +133,10 @@ Page({
       data: {
         phone: that.data.phone_num
       },
+      method: 'POST',
+      header: {
+        'content-type':'application/x-www-form-urlencoded'
+      },
       success ({ data }) {
         if (data.state === 'reg') {
           regCall();
@@ -168,6 +172,10 @@ Page({
       url: 'https://m.waitui.com/api/send_smsCodeAjax',
       data: {
         phone: that.data.phone_num
+      },
+      method: 'POST',
+      header: {
+        'content-type':'application/x-www-form-urlencoded'
       },
       success ({ data }) {
         if (data.state === 'success') {
@@ -206,6 +214,10 @@ Page({
         code_num: that.data.code_num,
         ip_address: '',
         city_address: ''
+      },
+      method: 'POST',
+      header: {
+        'content-type':'application/x-www-form-urlencoded'
       },
       success ({ data }) {
         that.setData({

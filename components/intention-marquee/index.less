@@ -1,0 +1,71 @@
+/*变量*/
+@base-color: #ea6f5a;//基本色号
+@my-color: #13426b;//控制中心色号
+
+
+
+/*常用的一些混合*/
+.ellip{//超出隐藏或换行
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.after-cls{//清除浮动
+    &:after{
+        content: " "; display: block; height: 0;
+        visibility: hidden; clear: both;
+    }
+}
+.display-flex{//flex布局
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.flex-number(@num: 1){
+    -webkit-box-flex: @num;
+    -webkit-flex: @num;
+    flex: @num;
+}
+.border-box(){//盒模型
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.border-radius(@radius: 0){//边框圆角
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+.opacity(@opacity: 1){//透明度
+    @opacityPercentage: @opacity * 100;
+    filter:alpha(opacity=@opacityPercentage);
+    -moz-opacity: @opacity;
+    opacity: @opacity;
+}
+.transition-all(@time: .2s){//动画过渡
+    -webkit-transition: all linear @time;
+    transition: all linear @time;
+}
+.forbid{//禁止点击
+    opacity: .8 !important;
+    cursor: not-allowed;
+}
+
+
+
+.intention-marquee{
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    background-color: #f6f9fb;
+    .wx-h3{
+        font-size: 14px;
+        font-weight: normal;
+        color: #666;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}

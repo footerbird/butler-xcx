@@ -1,5 +1,5 @@
 <wxs src="../filter.wxs" module="filter" />
-<div class="container" style="height: auto;">
+<view class="container" style="height: auto;">
 
     <view class="mark-list">
         <block wx:for="{{ mark_list }}" wx:for-item="mark" wx:key="regno_md">
@@ -23,4 +23,4 @@
         <van-loading size="14px">加载中...</van-loading>
     </view>
 
-</div>
+</view>

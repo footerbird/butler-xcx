@@ -1,0 +1,39 @@
+/*变量*/
+/*常用的一些混合*/
+.ellip {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.after-cls:after {
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.display-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.forbid {
+  opacity: 0.8 !important;
+  cursor: not-allowed;
+}
+.intention-marquee {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;
+  background-color: #f6f9fb;
+}
+.intention-marquee .wx-h3 {
+  font-size: 14px;
+  font-weight: normal;
+  color: #666;
+  overflow: hidden;
+  white-space: nowrap;
+}

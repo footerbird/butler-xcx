@@ -113,6 +113,10 @@ Page({
       data: {
         phone: that.data.phone_find
       },
+      method: 'POST',
+      header: {
+        'content-type':'application/x-www-form-urlencoded'
+      },
       success ({ data }) {
         if (data.state === 'reg') {
           regCall();
@@ -149,6 +153,10 @@ Page({
       data: {
         phone: that.data.phone_find
       },
+      method: 'POST',
+      header: {
+        'content-type':'application/x-www-form-urlencoded'
+      },
       success ({ data }) {
         if (data.state === 'success') {
           that.setData({
@@ -183,6 +191,10 @@ Page({
         phone_find: that.data.phone_find,
         pwd_find: that.data.pwd_find,
         code_find: that.data.code_find
+      },
+      method: 'POST',
+      header: {
+        'content-type':'application/x-www-form-urlencoded'
       },
       success ({ data }) {
         that.setData({

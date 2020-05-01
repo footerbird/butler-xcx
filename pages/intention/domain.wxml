@@ -1,25 +1,61 @@
-<view style="height: 100%;">
+<view style="height: 100%;" class="bg-white">
 
     <view class="container">
 
         <view class="intention-page">
-        
-            <image mode="widthFix" src="/assets/images/intention-top.jpg" style="width: 100%;" />
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price"></view>
+            </view>
+            <intention-marquee>
+                提前抢占互联网入口，有丰富的域名种类供您选择。提早注册品牌域名可以
+                防止域名被恶意抢注，保护品牌资产安全。\t\t\t\t提前抢占互联网入口，有丰富的
+                域名种类供您选择。提早注册品牌域名可以防止域名被恶意抢注，保护品牌资产安全。
+            </intention-marquee>
             <view class="bg-white">
                 <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
-                <van-field value="{{ intention_product }}" placeholder="您想购买的域名" />
-                <van-field value="{{ intention_name }}" placeholder="联系姓名" />
-                <van-field value="{{ intention_phone }}" type="tel" placeholder="手机号码" />
-                <van-field value="{{ description }}" type="textarea" rows="2" autosize
+                <van-field value="{{ intention_product }}" bindinput="intentionProductInput" placeholder="您想注册/购买的域名" />
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
                  maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
             </view>
         
             <view class="van-button-area">
-                <van-button type="primary" color="#ea6f5a" custom-style="font-size: 18px;" block>提交</van-button>
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
             </view>
-        
-        
-            <view class="ta-c mt20">
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">域名作为互联网门户入口，有着互联网房地产之称，其重要性也是不言而喻。域名主要有以下几点
+                    用途。一、建站，不管是博客也好，还是网站也好，域名都是搭建这些终端的必要条件。
+                    二、有的人购买域名，完全是处于自己的喜好，比如想拥有跟自己名字相同的域名或者想注册对自己来
+                    说有特殊意义的域名。
+                    三、还有的人购买域名，是出于投资的的目的，域名里蕴含的价值是无法估量的，有的域名开口就是几
+                    百万甚至上千万的价格，有些品相不错的域名它的售卖价格也会比注册价格高很多。
+                    四、对于一些品牌方来说，还有一种批量注册或者购买相似相关域名的现象，京东、腾讯、阿里等等品
+                    牌方都有专人去批量收购与他们的产品或者品牌相关强以及相似度高的域名。这一举动其实是对他们品
+                    牌的保护，以免有人用这些容易让人混淆的域名去做一些蹭流量甚至是破坏品牌名誉的事。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step4">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>域名专家评估\n分析、谈判、收购</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>获得想要的域名</text></view></view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
                 <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
                 <navigator class="home-link" url="/pages/index/index">
                     <image mode="widthFix" src="/assets/images/intention-logo.png" />
@@ -29,5 +65,7 @@
         </view>
 
     </view>
+    
+    <van-toast id="van-toast" />
 
 </view>

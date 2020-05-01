@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    home_circle: 1, // 品牌周期
+    home_solution: 1 // 商标解决方案
   },
 
   /**
@@ -62,5 +63,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  
+  switchCircle(e) {
+    const that = this;
+    that.setData({
+      home_circle: parseInt(e.currentTarget.dataset.circle)
+    });
   }
+  
 })

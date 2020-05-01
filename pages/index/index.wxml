@@ -44,16 +44,148 @@
                     <view class="wx-h3">企业新时代名片</view>
                 </navigator>
                 <view class="company-flex">
-                    <navigator class="domain" url="/pages/domain/list">
+                    <navigator open-type="switchTab" class="domain" url="/pages/domain/list">
                         <view class="title">域名市场</view>
                         <view class="wx-h2">让网站更好记</view>
                         <view class="wx-h3">品牌大数据，全网监控</view>
                     </navigator>
-                    <navigator class="mark" url="/pages/mark/list">
+                    <navigator open-type="switchTab" class="mark" url="/pages/mark/list">
                         <view class="title">商标市场</view>
                         <view class="wx-h2">好产品的出路</view>
                         <view class="wx-h3">一站式商标解决方案</view>
                     </navigator>
+                </view>
+            </view>
+        </view>
+        
+        <!--全周期品牌服务 -->
+        <view class="home-circle">
+            <view class="wx-h3 title">全周期的品牌服务</view>
+            <view class="wx-ul circle-tab">
+                <view class="wx-li {{ home_circle === 1 ? 'cur' : '' }}">
+                    <view class="wx-a" data-circle="1" bindtap="switchCircle">
+                        <view class="wx-em">初创期</view>
+                    </view>
+                </view>
+                <view class="wx-li {{ home_circle === 2 ? 'cur' : '' }}">
+                    <view class="wx-a" data-circle="2" bindtap="switchCircle">
+                        <view class="wx-em">发展期</view>
+                    </view>
+                </view>
+                <view class="wx-li {{ home_circle === 3 ? 'cur' : '' }}">
+                    <view class="wx-a" data-circle="3" bindtap="switchCircle">
+                        <view class="wx-em">成长期</view>
+                    </view>
+                </view>
+            </view>
+            <view class="circle-content">
+                <view class="circle-item" hidden="{{ home_circle !== 1 }}">
+                    <view class="circle-service">
+                        <navigator class="service-block" url="/pages/intention/gszc">
+                            <view class="service-block-title">
+                                <view class="wx-em">公司注册</view>
+                                <view class="wx-span"><view class="wx-i">快速拿证</view></view>
+                            </view>
+                            <view class="service-block-text">我们提供免费的公司起名和公司核名服务，
+                            最快三天拿到营业执照，顾问全程指导，省心省力，创业无门槛，轻松当老板。</view>
+                        </navigator>
+                        <navigator class="service-block" url="/pages/intention/csjz">
+                            <view class="service-block-title">
+                                <view class="wx-em">财税记账</view>
+                                <view class="wx-span"><view class="wx-i">资深会计</view></view>
+                            </view>
+                            <view class="service-block-text">专业高效的一体化财税服务，以标准化、精细化、
+                            规模化、建立市场体系；在改善用户体验方面不断革新优化，提升客户的服务需求。</view>
+                        </navigator>
+                        <navigator class="service-block" url="/pages/intention/mark">
+                            <view class="service-block-title">
+                                <view class="wx-em">商标注册<view class="wx-i hot"></view></view>
+                                <view class="wx-span"><view class="wx-i">专家辅助申请</view></view>
+                            </view>
+                            <view class="service-block-text">商标注册存在驳回失败风险，外推网利用大数据分析
+                            和先进搜索技术快速甄别类似商标注册信息及状态，帮助提高通过率。</view>
+                        </navigator>
+                        <navigator class="service-block" url="/pages/intention/domain">
+                            <view class="service-block-title">
+                                <view class="wx-em">域名注册</view>
+                                <view class="wx-span"><view class="wx-i">全球资源</view></view>
+                            </view>
+                            <view class="service-block-text">提前抢占互联网入口，有丰富的域名种类供您选择。
+                            提早注册品牌域名可以防止域名被恶意抢注，保护品牌资产安全。</view>
+                        </navigator>
+                    </view>
+                </view>
+                <view class="circle-item" hidden="{{ home_circle !== 2 }}">
+                    <view class="circle-service">
+                        <navigator class="service-block" url="/pages/intention/domain">
+                            <view class="service-block-title">
+                                <view class="wx-em">主流品牌域名获取</view>
+                                <view class="wx-span"><view class="wx-i">网络房地产</view></view>
+                            </view>
+                            <view class="service-block-text">评估、分析、谈判、收购，品牌域名全程策划。域名是
+                            企业重要的无形资产，有利于树立良好的品牌形象。使推广事半功倍，省下巨额广告费用。</view>
+                        </navigator>
+                        <navigator class="service-block" url="/pages/intention/mark">
+                            <view class="service-block-title">
+                                <view class="wx-em">相关品类商标获取</view>
+                                <view class="wx-span"><view class="wx-i">防止商标侵权</view></view>
+                            </view>
+                            <view class="service-block-text">商标急用等不了？选好了商标名字却被驳回？外推网
+                            帮您购买心仪的商标，防止因商标使用不当构成侵权。</view>
+                        </navigator>
+                        <navigator class="service-block" url="/pages/intention/gwjz">
+                            <view class="service-block-title">
+                                <view class="wx-em">官网建站与小程序开发</view>
+                                <view class="wx-span"><view class="wx-i">重要的获客渠道</view></view>
+                            </view>
+                            <view class="service-block-text">官网和小程序在线上的持续曝光，极大降低了企业的
+                            获客成本，面向全球客户，可以全面、详细地介绍公司产品及公司服务。</view>
+                        </navigator>
+                        <navigator class="service-block" url="/pages/intention/visj">
+                            <view class="service-block-title">
+                                <view class="wx-em">企业VI形象视觉设计</view>
+                                <view class="wx-span"><view class="wx-i">企业文化</view></view>
+                            </view>
+                            <view class="service-block-text">VI设计有助于企业带来视觉的宣传作用，提升品牌
+                            辨识度，同时还能提高消费者对品牌的忠诚度，加强企业文化建设。</view>
+                        </navigator>
+                    </view>
+                </view>
+                <view class="circle-item" hidden="{{ home_circle !== 3 }}">
+                    <view class="circle-service">
+                        <navigator class="service-block" url="/pages/intention/ppzx">
+                            <view class="service-block-title">
+                                <view class="wx-em">品牌发展咨询</view>
+                                <view class="wx-span"><view class="wx-i">未雨绸缪</view></view>
+                            </view>
+                            <view class="service-block-text">帮助确立品牌定位、提前做好品牌战略规划和品牌
+                            营销策划等，帮助企业建立强有力的品牌从而在市场上取得竞争优势。</view>
+                        </navigator>
+                        <navigator class="service-block" url="/pages/intention/pptg">
+                            <view class="service-block-title">
+                                <view class="wx-em">品牌营销推广</view>
+                                <view class="wx-span"><view class="wx-i">产品落地</view></view>
+                            </view>
+                            <view class="service-block-text">自媒体推广、短视频推广、搜索引擎推广，通过对
+                            品牌产品的曝光，可以挖掘潜在客户，让客户主动找上门，掌握主动权。</view>
+                        </navigator>
+                        <navigator class="service-block" url="/pages/intention/ppwq">
+                            <view class="service-block-title">
+                                <view class="wx-em">品牌确权维权</view>
+                                <view class="wx-span"><view class="wx-i">打击竞争对手</view></view>
+                            </view>
+                            <view class="service-block-text">品牌意识的确定以及相关品牌的保护，让企业可以
+                            在面对品牌危机的时候临危不乱，有效使用法律武器捍卫自己的权利。</view>
+                        </navigator>
+                        <navigator class="service-block" url="/pages/intention/ppyy">
+                            <view class="service-block-title">
+                                <view class="wx-em">品牌代运营</view>
+                                <view class="wx-span"><view class="wx-i">优化企业资源</view></view>
+                            </view>
+                            <view class="service-block-text">代运营可以弥补企业人手短缺以及经验不足的缺点，
+                            有效降低企业运营成本，减小品牌运营风险。</view>
+                        </navigator>
+                    </view>
                 </view>
             </view>
         </view>

@@ -1,0 +1,5 @@
+<view class="intention-marquee">
+    <scroll-view class="wx-h3" scroll-x="true" scroll-left="{{ scroll_left }}" bindscrolltolower="scrollToLower">
+        <slot />
+    </scroll-view>
+</view>
