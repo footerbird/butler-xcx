@@ -1,0 +1,117 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price">
+                    <text class="wx-i">¥</text>
+                    <text class="wx-font">3500</text>
+                    <text class="wx-i">/件</text>
+                </view>
+            </view>
+            <intention-marquee>
+                适用于被他人申请的商标侵权，希望在其商标公示期提出异议申请，以阻止他人
+                注册的用户\t\t\t\t适用于被他人申请的商标侵权，希望在其商标公示期提出异议
+                申请，以阻止他人注册的用户
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">在先权利人或利害关系人对在初审公告期内的商标提出异议，以阻止他人商标的授权，维护自身
+                    合法权益。 常用的异议理由主要包括： 1. 侵犯了在先注册商标专用权； 2. 侵犯了驰名商标专
+                    用权； 3. 侵犯了在先商号权或在先专利权或在先著作权； 4. 以不正当手段抢注他人在先使用并
+                    具有一定影响力的商标； 5. 属于未经授权，以自己的名义将被代表人的商标申请注册； 6. 侵犯
+                    他人在先特殊标志权的。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step7">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>专业代理人分析\n并评估成功概率</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>准备异议申请材料</text></view></view>
+                    <view class="step-cell step-cell-5"><view class="wx-p"><text>向商标局提交\n异议申请</text></view></view>
+                    <view class="step-cell step-cell-6"><view class="wx-p"><text>官方审查</text></view></view>
+                    <view class="step-cell step-cell-7"><view class="wx-p"><text>官方下发裁决</text></view></view>
+                </view>
+            </view>
+            <view class="wx-article">
+                <view class="wx-section">
+                    <view class="intention-title"><view class="wx-span">常见问题</view></view>
+                    <view class="intention-sub-title">COMMON PROBLEMS</view>
+                    <view class="wx-h4">Q：什么时候可以提出商标异议申请？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    申请的商标进入初审公告期后，在公告期三个月内，相关权利人可以向
+                    国家商标局提出商标异议申请。</view>
+                    <view class="wx-h4">Q：商标异议申请的范围有哪几种？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    目前，商标异议的内容主要有两种：一是初审公告的商标与已注册的商
+                    标相同或近似；二是认为该初审公告的商标违反禁用条款。</view>
+                    <view class="wx-h4">Q：申请人向官方提出商标异议申请除了基本申请材料以外，还需要提供的证据材料有哪些？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    证据材料包括但不限于:企业或个人资质及荣誉方面材料；广告宣传资
+                    料、宣传册或产品包装印刷合同及发票；合同、销售发票；参展服务合同及发票、展会照片等等。</view>
+                    <view class="wx-h4">Q：商标异议申请审查的周期是多久？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    自商标异议申请递交之日起，12个月左右可审查完毕，如有特殊情况将
+                    有可能延长6个月的审查期。</view>
+                    <view class="wx-h4">Q：商标权利人在商标被异议后多长时间之内答辩有效？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    国家商标局收到商标异议申请书及有关证据材料后，将商标异议申请书
+                    副本有邮寄给被异议人，被异议人应在收到商标异议申请书之日起三十天内作出书面答辩。被异议人在
+                    限期内未作出答辩的视为弃权，不影响异议程序的正常进行。</view>
+                    <view class="wx-h4">Q：如果对国家商标局的商标异议裁定不服，多久之内可以申请复审？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标异议当事人中任何一方对商标异议裁定不服的，可在收到商标异议
+                    裁定通知书日起十五天内，向商标评审委员会申请复审。</view>
+                    <view class="wx-h4">Q：商标异议申请有什么用？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    1、商标异议申请是防止自身商标被淡化、被弱化、被丑化以及被他人傍
+                    名牌的重要途径。
+                        2、商标异议申请是商标法赋予社会公众对即将授权商标表达自己主张的法定权利，当事人只有充
+                        分行使，才能维护自身利益，在办理商标异议申请方面有很多成功案例。
+                        3、商标异议申请是防止他人抢注商标、版权、字号等在先权利的重要途径。
+                        4、商标异议是当事人阻止初审商标不能注册的最佳途径，可以阻止或延缓竞争者推出新产品。
+                    </view>
+                    <view class="wx-h4">Q：异议申请的办理途径有哪些？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    向商标局提出商标异议申请有以下两条途径：1、委托国家认可的商标代
+                    理机构办理；2、异议人自己办理。</view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

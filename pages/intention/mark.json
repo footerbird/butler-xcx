@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "商标代理服务",
   "usingComponents": {
     "van-button": "@vant/weapp/button",
     "van-field": "@vant/weapp/field",

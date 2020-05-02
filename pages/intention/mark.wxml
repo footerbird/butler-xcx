@@ -60,14 +60,17 @@
                     <view class="intention-title"><view class="wx-span">常见问题</view></view>
                     <view class="intention-sub-title">COMMON PROBLEMS</view>
                     <view class="wx-h4">Q：注册商标多久能下来？</view>
-                    <view class="wx-p"><strong>A：</strong>正常且顺利的流程如下：递交次日（非工作日延后）出申请号；3-5个月
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    正常且顺利的流程如下：递交次日（非工作日延后）出申请号；3-5个月
                     左右受通，9-12个月左右初审公告或驳回；初审公告后3个月是异议期，这个期间无人异议，3个月后进
                     入注册公告，注册公告2个月后拿到商标注册证书。</view>
                     <view class="wx-h4">Q：商标注册证书有有效期吗？过期了怎么办？</view>
-                    <view class="wx-p"><strong>A：</strong>商标有效期为10年，自注册之日起到期满前12个月内进行续展，每续展
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标有效期为10年，自注册之日起到期满前12个月内进行续展，每续展
                     一次为10年，如果想让商标持续有效，可以每10年续展一次；期满未续展的，宽展期为6个月。</view>
                     <view class="wx-h4">Q：商标注册产品是如何进行分类的？</view>
-                    <view class="wx-p"><strong>A：</strong>根据世界知识产权组织《商标注册用商品和服务国际分类》的规定，商标
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    根据世界知识产权组织《商标注册用商品和服务国际分类》的规定，商标
                     划分为45个类别。其中，1-34类为商品商标，35-45类为服务商标。
                         商品商标：是指商品的生产者或经营者为了将自己的商品与他人的商品相区别而使用的标记。
                         服务商标：指服务的提供者为了将自己提供的服务与他人提供的服务相区别而使用的标记。其中有
@@ -75,7 +78,8 @@
                         场所、服务的对象等实际情况进行判断。
                     </view>
                     <view class="wx-h4">Q：自己的商品注册商标有什么好处？</view>
-                    <view class="wx-p"><strong>A：</strong>1、商标具有独占性。使用商标的目的就是为了区别与他人的商品或服务，
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    1、商标具有独占性。使用商标的目的就是为了区别与他人的商品或服务，
                     便于消费者识别。
                         2、注册商标所有人对其商标具有专用权、受到法律的保护，未经商标权所有人的许可，任何人不得
                         擅自使用与该注册商标相同或相类似的商标，否则将承担相应的法律责任。

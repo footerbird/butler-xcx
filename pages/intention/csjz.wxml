@@ -1,0 +1,67 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price"></view>
+            </view>
+            <intention-marquee>
+                专业高效的一体化财税服务，以标准化、精细化、规模化、建立市场体系；在改善用户
+                体验方面不断革新优化，提升客户的服务需求。\t\t\t\t专业高效的一体化财税服务，以
+                标准化、精细化、规模化、建立市场体系；在改善用户体验方面不断革新优化，提升客户的服务需求。
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">代理记账的定义 《会计法》第36条明确规定:"不具备设置条件的应当委托经批准设立从事会计
+                    代理记账业务的中介机构代理记账。"代理记账是指将本企业的会计核算、记账、报税等一系列的工
+                    作全部委托给专业记账公司完成，本企业只设立出纳人员，负责日常货币收支业务和财产保管等工作。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step7">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>签订代账合同</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>收取票据</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>专属会计开始记账</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>税金确定</text></view></view>
+                    <view class="step-cell step-cell-5"><view class="wx-p"><text>纳税申报</text></view></view>
+                    <view class="step-cell step-cell-6"><view class="wx-p"><text>提供财务报表</text></view></view>
+                    <view class="step-cell step-cell-7"><view class="wx-p"><text>日常财税问题解答</text></view></view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

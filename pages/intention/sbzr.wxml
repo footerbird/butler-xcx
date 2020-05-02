@@ -1,0 +1,110 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price">
+                    <text class="wx-i">¥</text>
+                    <text class="wx-font">1200</text>
+                    <text class="wx-i">/件</text>
+                </view>
+            </view>
+            <intention-marquee>
+                适用于需要将自有商标转让（商标权属发生改变）的用户，需依照商标法规定向商标
+                局提交转让申请\t\t\t\t适用于需要将自有商标转让（商标权属发生改变）的用户，需
+                依照商标法规定向商标局提交转让申请
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">商标转让是最快获得商标专有权的方式，相比于商标申请1年左右的时长以及40%左右的驳回
+                    率，商标转让可以让受让人快速获得商标权并迅速进入品牌市场宣传。 商标局对商标转让申请审
+                    查后，核发商标转让证明，不再另发商标注册证，原商标注册证与商标转让证明一起使用。 商标
+                    转让好比房屋过户，转让双方除签署转让合同外，更应通过代理机构到国家商标局进行转让申请，
+                    只有在商标局核准转让后，受让人才享有该商标的专用权，避免风险。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step6">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>准备商标转让材料</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>向商标局提交\n转让申请</text></view></view>
+                    <view class="step-cell step-cell-5"><view class="wx-p"><text>官方审查</text></view></view>
+                    <view class="step-cell step-cell-6"><view class="wx-p"><text>官方核发转让证明</text></view></view>
+                </view>
+            </view>
+            <view class="wx-article">
+                <view class="wx-section">
+                    <view class="intention-title"><view class="wx-span">常见问题</view></view>
+                    <view class="intention-sub-title">COMMON PROBLEMS</view>
+                    <view class="wx-h4">Q：为什么要办理商标转让？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标权属发生改变依照商标法规定须向商标局提出申请，否则不受法律
+                    保护，影响自己的利益。</view>
+                    <view class="wx-h4">Q：正在申请中的商标能转让吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    可以，提供该商标受理通知书和核准商标转让通知书办理即可进行转让。</view>
+                    <view class="wx-h4">Q：什么情况下商标转让无效？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    有效期满未提出续展、宽展申请，或商标局已注销的商标；他人已向商
+                    标局提出该注册商标连续三年停止使用的；擅自改变了注册商标的文字、图形及其组合的；未经有关部
+                    门批准，自行改变注册人名义、地址，以其他事项而未办理变更手续的。</view>
+                    <view class="wx-h4">Q：商标转让成功后，是否会重新下发商标注册证？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    转让成功后会下发转让证明，不会重新下发新名义的注册证。注册成功的
+                    商标使用转让证明和原商标注册证来证明商标权。</view>
+                    <view class="wx-h4">Q：企业注销了，还可以办理商标转让吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    企业注销一年内，可以办理商标转让（移转）手续。</view>
+                    <view class="wx-h4">Q：同一申请人名下有2个商标，文字一样，类别不同，可以只转让一个吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    可以</view>
+                    <view class="wx-h4">Q：同一申请人名下有2个商标，类别一样，商标图相似，可以只转让一个吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    不可以，同一申请人名下的相同或近似商标必须一并转让。</view>
+                    <view class="wx-h4">Q：转让人的企业地址搬迁过，在办理商标转让时有影响吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    在办理商标转让时需一并办理商标变更。</view>
+                    <view class="wx-h4">Q：商标转让给个人有什么要求？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标转让到个人名义，需要注意商标受让人的个体工商户营业执照必须与
+                    商标注册类别保持一致。</view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

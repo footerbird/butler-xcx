@@ -1,0 +1,98 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price">
+                    <text class="wx-i">¥</text>
+                    <text class="wx-font">2500</text>
+                    <text class="wx-i">/件</text>
+                </view>
+            </view>
+            <intention-marquee>
+                适用于商标被他人申请撤销，（在规定时效内）向商标局提交答辩申请，以保留
+                商标的使用权的用户\t\t\t\t适用于商标被他人申请撤销，（在规定时效内）向商
+                标局提交答辩申请，以保留商标的使用权的用户
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">对于他人出于保护而非使用目的注册的防御商标，以及被核准注册达三年以上而又从未实际
+                    使用过的商标，任何单位或者个人均可向商标局递交撤销申请，为自己的商标申请或品牌保护扫
+                    清障碍。 撤三申请的成功概率很高，原因在于： 1、商标权利人提供符合法律要求的完整使用
+                    证据较难； 2、很多商标权利人可能已经变更名称、地址等信息，但未及时向商标局递交信息变
+                    更申请，导致商标权利人无法收到答辩通知而无法在法定期限内作出书面答辩。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step7">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>专业代理人分析\n撤销理由并评估</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>准备撤销答辩材料</text></view></view>
+                    <view class="step-cell step-cell-5"><view class="wx-p"><text>向商标局提交\n答辩材料及证据</text></view></view>
+                    <view class="step-cell step-cell-6"><view class="wx-p"><text>官方审查</text></view></view>
+                    <view class="step-cell step-cell-7"><view class="wx-p"><text>官方下发裁决</text></view></view>
+                </view>
+            </view>
+            <view class="wx-article">
+                <view class="wx-section">
+                    <view class="intention-title"><view class="wx-span">常见问题</view></view>
+                    <view class="intention-sub-title">COMMON PROBLEMS</view>
+                    <view class="wx-h4">Q：为什么要做撤三答辩？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    自己的注册商标被他人提出撤三申请，权利人撤三答辩的目的是为了争取
+                    自己的注册商标不被他人顺利撤销，保护自己的品牌权益。专业的答辩会增加注册商标不被撤销的成功
+                    率，如果不作答辩将让审理员更加偏向于申请人，该注册商标很可能就会被撤销掉，从而权利人将会失
+                    去该注册商标的一切权益。</view>
+                    <view class="wx-h4">Q：什么时候需要做商标撤三答辩？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标注册人收到商标局下发的《关于提供注册商标使用证据的通知》之日
+                    （以收到信函的邮戳日期）起2个月内向商标局进行商标撤三答辩并递交相关使用证据材料。</view>
+                    <view class="wx-h4">Q：商标注册人做撤三答辩除了基本申请材料以外，还需要的主要证据有哪些？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    主要证据包括但不限于:企业或个人资质及荣誉方面材料；广告宣传资料、
+                    宣传册或产品包装印刷合同及发票；合同、销售发票；参展服务合同及发票、展会照片等等。</view>
+                    <view class="wx-h4">Q：撤三答辩的成功几率有多大？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    答辩人准备的材料越齐全、证据越充分，成功的几率就会越大。所以企业
+                    有必要保留公司的广告宣传，销售发票等材料，特别是在日常的工作中应该将自己的注册商标有效用起来，
+                    才能避免被他人成功撤销。</view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

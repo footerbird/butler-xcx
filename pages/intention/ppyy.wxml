@@ -1,0 +1,65 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price"></view>
+            </view>
+            <intention-marquee>
+                代运营可以弥补企业人手短缺以及经验不足的缺点，有效降低企业运营成本，减小品牌
+                运营风险。\t\t\t\t代运营可以弥补企业人手短缺以及经验不足的缺点，有效降低企业运
+                营成本，减小品牌运营风险。
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">品牌代运营的主要工作内容是指帮助商家开展、完善、提升网上销售，具体包括品牌策划、建站、
+                    seo优化、sem推广等。由于很多企业规模比较小，没有专业的品牌运营专业人才，即使有相关品牌人
+                    才也要消耗企业大量的人力物力成本，而品牌代运营依托外推网专业的品牌运营经验，可以以更小的成
+                    本帮助企业完成同等甚至更好的品牌运营成果，提升企业品牌价值。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step4">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>品牌专家分析\n品牌发展现状</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>开展品牌代运营</text></view></view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

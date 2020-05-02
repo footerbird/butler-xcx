@@ -97,6 +97,10 @@
   font-weight: 600;
   margin-bottom: 0.34em;
 }
+.wx-article .wx-h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
 .wx-article .wx-p {
   margin: 0 0 1em;
 }

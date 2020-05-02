@@ -273,6 +273,113 @@
   transition: all linear 0.2s;
   color: #00a4ff;
 }
+.home-solution {
+  margin-top: 15px;
+  background-color: #fff;
+}
+.home-solution .title {
+  font-size: 24px;
+  font-weight: 400;
+  height: 92px;
+  line-height: 92px;
+  text-align: center;
+}
+.home-solution .solution-content {
+  border-top: 1px solid #e5e8ed;
+  background-color: #f5f7fa;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block {
+  display: block;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #e5e8ed;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block .service-block-title {
+  position: relative;
+  height: 50px;
+  padding: 0 40px 0 15px;
+  background-color: #fff;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block .service-block-title .wx-em {
+  font-size: 16px;
+  color: #000;
+  line-height: 50px;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block .service-block-title:after {
+  content: '';
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  background: url(https://m.waitui.com/htdocs/mobile/images/home-solution-arrow.png) no-repeat;
+  background-size: 36px 18px;
+  background-position: 0 0;
+  margin-top: -9px;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block .service-block-text {
+  display: none;
+  font-size: 14px;
+  color: #666;
+  line-height: 24px;
+  padding: 25px 15px 0 15px;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block .service-block-price {
+  display: none;
+  font-size: 16px;
+  color: #ff6600;
+  line-height: 32px;
+  padding: 0 15px 20px 15px;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block .service-block-price .wx-i {
+  font-size: 14px;
+  margin-right: 2px;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block .service-block-price .wx-a {
+  float: right;
+  position: relative;
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+  padding-right: 20px;
+  color: #00a4ff;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block .service-block-price .wx-a:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  background: url(https://m.waitui.com/htdocs/mobile/images/home-solution-price.png) no-repeat;
+  background-size: 100% 100%;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block:hover {
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  box-shadow: 0 4px 8px rgba(3, 27, 78, 0.12);
+}
+.home-solution .solution-content .solution-item .solution-service .service-block:hover .service-block-title .wx-em {
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  color: #00a4ff;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block.cur {
+  box-shadow: 0 4px 8px rgba(3, 27, 78, 0.12);
+}
+.home-solution .solution-content .solution-item .solution-service .service-block.cur .service-block-title .wx-em {
+  color: #00a4ff;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block.cur .service-block-title:after {
+  background-position: -18px 0;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block.cur .service-block-text {
+  display: block;
+}
+.home-solution .solution-content .solution-item .solution-service .service-block.cur .service-block-price {
+  display: block;
+}
 .entry-subject-topic {
   display: -webkit-box;
   display: -moz-box;
@@ -389,6 +496,34 @@
 .home-topic .image-box image {
   display: block;
   width: 100%;
+}
+.home-marksort {
+  position: relative;
+  width: 100%;
+  padding: 36px 16px;
+  background: url(https://m.waitui.com/htdocs/mobile/images/service-block.jpg) #0076fe no-repeat;
+  background-size: 100% auto;
+}
+.home-marksort .text {
+  font-size: 16px;
+  color: #fff;
+  line-height: 26px;
+  text-align: center;
+}
+.home-marksort .btn {
+  display: block;
+  width: 136px;
+  height: 40px;
+  line-height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 .home-copyright {
   padding: 10px 30px;

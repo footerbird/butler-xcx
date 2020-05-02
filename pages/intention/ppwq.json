@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "品牌确权维权",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button",
+    "van-field": "@vant/weapp/field",
+    "van-toast": "@vant/weapp/toast",
+    "intention-marquee": "/components/intention-marquee/index"
+  }
+}

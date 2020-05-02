@@ -189,6 +189,191 @@
                 </view>
             </view>
         </view>
+        
+        <!-- 商标分类入口 -->
+        <view class="home-marksort">
+            <view class="text"><text>截至2020年，商标国际分类共包括45类，\n共包含一万多个商品和服务项目</text></view>
+            <navigator url="/pages/mark/sort" class="btn">商标分类</navigator>
+        </view>
+        
+        <!--商标解决方案 -->
+        <view class="home-solution">
+            <view class="wx-h3 title">商标解决方案</view>
+            <view class="solution-content">
+                <view class="solution-item">
+                    <view class="solution-service">
+                        <view class="service-block {{ home_solution === 1 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="1" bindtap="switchSolution">
+                                <text class="wx-em">商标购买</text>
+                            </view>
+                            <view class="service-block-text">适用于急用商标（商标注册时间长）等不及或者为了企业长远发展
+                            需要全面保护品牌的用户</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>5000起
+                                <navigator class="wx-a" url="/pages/intention/mark">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 2 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="2" bindtap="switchSolution">
+                                <text class="wx-em">商标注册</text>
+                            </view>
+                            <view class="service-block-text">顾问1对1服务，通过大数据比对专业查询降低近似风险，提高注册
+                            成功率，托管式服务省心省力</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>600
+                                <navigator class="wx-a" url="/pages/intention/mark">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 3 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="3" bindtap="switchSolution">
+                                <text class="wx-em">商标设计</text>
+                            </view>
+                            <view class="service-block-text">适用于需要通过注册图形或独一无二的文字商标来加强品牌辨识度，
+                            从而扩大品牌影响力的用户</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>1000
+                                <navigator class="wx-a" url="/pages/intention/sbsj">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 4 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="4" bindtap="switchSolution">
+                                <text class="wx-em">商标驳回复审</text>
+                            </view>
+                            <view class="service-block-text">适用于商标实质审查未通过，（在规定时效内）希望向商标局提交
+                            复审申请，再次争取的用户</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>3500
+                                <navigator class="wx-a" url="/pages/intention/bhfs">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 5 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="5" bindtap="switchSolution">
+                                <text class="wx-em">国际商标</text>
+                            </view>
+                            <view class="service-block-text">这里指的注册马德里国际商标。由于商标的地域性，适用于拓展海外
+                            市场增强国际竞争力的用户</view>
+                            <view class="service-block-price">议价
+                                <navigator class="wx-a" url="/pages/intention/gjsb">了解更多</navigator>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="solution-item">
+                    <view class="solution-service">
+                        <view class="service-block {{ home_solution === 6 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="6" bindtap="switchSolution">
+                                <text class="wx-em">商标变更</text>
+                            </view>
+                            <view class="service-block-text">适用于需要变更自有商标的注册人名义、登记地址等注册事项
+                            （代理人、文件接收人）的用户</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>600
+                                <navigator class="wx-a" url="/pages/intention/sbbg">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 7 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="7" bindtap="switchSolution">
+                                <text class="wx-em">商标转让</text>
+                            </view>
+                            <view class="service-block-text">适用于需要将自有商标转让（商标权属发生改变）的用户，需依照
+                            商标法规定向商标局提交转让申请</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>1200
+                                <navigator class="wx-a" url="/pages/intention/sbzr">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 8 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="8" bindtap="switchSolution">
+                                <text class="wx-em">商标续展</text>
+                            </view>
+                            <view class="service-block-text">适用于注册商标有效期（十年）满前（在规定时效内）希望向商标局
+                            提交申请，以保有原商标的用户</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>1000
+                                <navigator class="wx-a" url="/pages/intention/sbxz">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 9 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="9" bindtap="switchSolution">
+                                <text class="wx-em">商标许可备案</text>
+                            </view>
+                            <view class="service-block-text">适用于需要将自有商标授权许可他人使用的用户，需向商标局提交
+                            许可申请并报送备案材料</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>600
+                                <navigator class="wx-a" url="/pages/intention/xkba">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 10 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="10" bindtap="switchSolution">
+                                <text class="wx-em">补注册证</text>
+                            </view>
+                            <view class="service-block-text">适用于《商标注册证》遗失或者破损，想要申请补发证书的
+                            商标注册人</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>1000
+                                <navigator class="wx-a" url="/pages/intention/bzcz">了解更多</navigator>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="solution-item">
+                    <view class="solution-service">
+                        <view class="service-block {{ home_solution === 11 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="11" bindtap="switchSolution">
+                                <text class="wx-em">商标异议</text>
+                            </view>
+                            <view class="service-block-text">适用于被他人申请的商标侵权，希望在其商标公示期提出异议申请，
+                            以阻止他人注册的用户</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>3500
+                                <navigator class="wx-a" url="/pages/intention/sbyy">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 12 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="12" bindtap="switchSolution">
+                                <text class="wx-em">商标撤销</text>
+                            </view>
+                            <view class="service-block-text">适用于因商标资源被恶意占用等原因，需要撤销他人商标（已注册
+                            满三年且长期不使用）的用户</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>2500
+                                <navigator class="wx-a" url="/pages/intention/sbcx">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 13 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="13" bindtap="switchSolution">
+                                <text class="wx-em">商标无效宣告</text>
+                            </view>
+                            <view class="service-block-text">适用于他人已注册成功的商标侵犯自身在先权或违反《商标法》，
+                            希望宣告该商标无效的用户</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>3500
+                                <navigator class="wx-a" url="/pages/intention/wxxg">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 14 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="14" bindtap="switchSolution">
+                                <text class="wx-em">异议答辩</text>
+                            </view>
+                            <view class="service-block-text">适用于商标注册公示期被他人提出异议，（在规定时效内）希望
+                            提交答辩申请，以挽回注册的用户</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>3500
+                                <navigator class="wx-a" url="/pages/intention/yydb">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 15 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="15" bindtap="switchSolution">
+                                <text class="wx-em">撤销答辩</text>
+                            </view>
+                            <view class="service-block-text">适用于商标被他人申请撤销，（在规定时效内）向商标局提交
+                            答辩申请，以保留商标的使用权的用户</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>2500
+                                <navigator class="wx-a" url="/pages/intention/cxdb">了解更多</navigator>
+                            </view>
+                        </view>
+                        <view class="service-block {{ home_solution === 16 ? 'cur' : '' }}">
+                            <view class="service-block-title" data-solution="16" bindtap="switchSolution">
+                                <text class="wx-em">无效宣告答辩</text>
+                            </view>
+                            <view class="service-block-text">适用于注册商标被宣告无效后，（在规定时效内）向商标局
+                            提交答辩，以维护自身商标权益的用户</view>
+                            <view class="service-block-price"><text class="wx-i">¥</text>3500
+                                <navigator class="wx-a" url="/pages/intention/wxdb">了解更多</navigator>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
 
         <!--精准的客户定位-->
         <view class="home-topic home-topic-target">
@@ -200,7 +385,7 @@
                 <image mode="widthFix" src="/assets/images/home-topic-target.png" />
             </view>
         </view>
-
+        
         <!--多样的营销方式-->
         <view class="home-topic home-topic-types">
             <view class="intro-box">

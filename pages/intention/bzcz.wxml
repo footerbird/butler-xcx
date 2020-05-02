@@ -1,0 +1,87 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price">
+                    <text class="wx-i">¥</text>
+                    <text class="wx-font">1000</text>
+                    <text class="wx-i">/件</text>
+                </view>
+            </view>
+            <intention-marquee>
+                适用于《商标注册证》遗失或者破损，想要申请补发证书的商标注册人
+                \t\t\t\t适用于《商标注册证》遗失或者破损，想要申请补发证书的商标注册人
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">补发商标注册证是指在《商标注册证》遗失或者破损的情况下，商标注册人向商标局提出补发
+                    商标注册证申请，并取得商标再次发出的《商标注册证》的程序。
+                    遗失的，补发申请书件齐备并符合规定，经审查核准后，商标局在《商标公告》上刊登遗失证明，
+                    发出《领取商标注册通知书》；
+                    破损的，申请人在提交补发申请时应将《商标注册证》交回商标局，如补证申请书件齐备并符合规
+                    定，经审查核准后，商标局发出《领取商标注册通知书》。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step6">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>准备补注册证材料</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>向商标局提交\n补注册证申请</text></view></view>
+                    <view class="step-cell step-cell-5"><view class="wx-p"><text>官方审查</text></view></view>
+                    <view class="step-cell step-cell-6"><view class="wx-p"><text>领取新证书</text></view></view>
+                </view>
+            </view>
+            <view class="wx-article">
+                <view class="wx-section">
+                    <view class="intention-title"><view class="wx-span">常见问题</view></view>
+                    <view class="intention-sub-title">COMMON PROBLEMS</view>
+                    <view class="wx-h4">Q：申请补发《商标注册证》有何具体要求？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    （1）申请人应当按照要求如实填写申请书件，不得擅自修改格式。申请
+                    书应当打字或印刷。 （2）申请人名称、申请人章戳（签字）处加盖的章戳（签字）应当与其身份证明
+                    文件中的名称一致。 （3）商标注册号应按照《商标注册证》填写，一份申请补发一件《商标注册证》。</view>
+                    <view class="wx-h4">Q：申请补发《商标注册证》应提交哪些文件资料？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    （1）补发商标注册证申请书； （2）商标注册人经盖章或者签字确认的
+                    身份证明文件（营业执照副本、身份证等）复印件； （3）商标代理委托书。</view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

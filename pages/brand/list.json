@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "品牌大全",
   "usingComponents": {
     "van-loading": "@vant/weapp/loading"
   },

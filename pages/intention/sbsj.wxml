@@ -1,0 +1,69 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price">
+                    <text class="wx-i">¥</text>
+                    <text class="wx-font">1000</text>
+                    <text class="wx-i">/件</text>
+                </view>
+            </view>
+            <intention-marquee>
+                适用于需要通过注册图形或独一无二的文字商标来加强品牌辨识度，从而扩大品牌
+                影响力的用户\t\t\t\t适用于需要通过注册图形或独一无二的文字商标来加强品牌辨
+                识度，从而扩大品牌影响力的用户
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">商标设计是确定优化性商标的创造劳动。商品命名用文字、图案表示出来就是商标。商标设计
+                    应做到体裁多样、构思灵巧、简洁明了、易读易记、鲜明醒目，别致新颖。在设计商标时要根据市
+                    场特点、经营方式、销售对象、传播媒体的特点，运用不同的策略，以便在消费者心目中产生声望，
+                    变成无形的巨大财富。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step4">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>商标设计师分析\n并评估复杂度</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>获得商标设计图样</text></view></view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

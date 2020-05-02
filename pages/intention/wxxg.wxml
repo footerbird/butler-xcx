@@ -1,0 +1,120 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price">
+                    <text class="wx-i">¥</text>
+                    <text class="wx-font">3500</text>
+                    <text class="wx-i">/件</text>
+                </view>
+            </view>
+            <intention-marquee>
+                适用于他人已注册成功的商标侵犯自身在先权或违反《商标法》，希望宣告该商标无效
+                的用户\t\t\t\t适用于他人已注册成功的商标侵犯自身在先权或违反《商标法》，希望宣
+                告该商标无效的用户
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">对核准注册的商标，自核准之日起五年内，在先权利人、利害关系人认为其侵犯了在先权利
+                    或利益的，可以向商评委提出无效宣告。驰名商标不受五年的限制。 具体无效理由主要包括：
+                    1. 侵犯了在先商标注册专用权； 2. 侵犯了驰名商标专用权； 3. 侵犯了在先商号权或在先
+                    专利权或著作权； 4. 以不正当手段抢注他人在先使用并具有一定影响力的商标； 5. 属于未
+                    经授权，以自己的名义将被代表人的商标申请注册； 6. 侵犯他人在先特殊标志权的。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step7">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>专业代理人分析\n并评估成功概率</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>准备无效宣告材料</text></view></view>
+                    <view class="step-cell step-cell-5"><view class="wx-p"><text>向商标局提交\n无效宣告申请</text></view></view>
+                    <view class="step-cell step-cell-6"><view class="wx-p"><text>官方审查</text></view></view>
+                    <view class="step-cell step-cell-7"><view class="wx-p"><text>官方下发裁决</text></view></view>
+                </view>
+            </view>
+            <view class="wx-article">
+                <view class="wx-section">
+                    <view class="intention-title"><view class="wx-span">常见问题</view></view>
+                    <view class="intention-sub-title">COMMON PROBLEMS</view>
+                    <view class="wx-h4">Q：什么是商标无效宣告？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标无效宣告是指商标在先权利人或者利害关系人认为已经注册的商标，
+                    违反《商标法》相关规定，请求商标评审委员会撤销该注册商标的法律程序。</view>
+                    <view class="wx-h4">Q：无效宣告只针对已经注册成功的商标吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    无效宣告程序只针对已经注册成功的商标才能提起。</view>
+                    <view class="wx-h4">Q：如何提升无效宣告的成功率？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标无效宣告的成功率不仅取决于申请人提供的相关证据的效力，也依赖
+                    于代理人的专业水平，，以及对方掌握的证据。而出具对方申请商标存在恶意的相关证据比较重要。</view>
+                    <view class="wx-h4">Q：什么时候下可以提出注册商标无效宣告申请？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    注册商标核准之日起五年内可以提出注册商标无效宣告申请，驰名商标不
+                    受五年限制。</view>
+                    <view class="wx-h4">Q：申请人向官方提出注册商标无效宣告申请除了基本的申请材料以外，还需要提供的证据材料有哪
+                    些？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    证据材料包括但不限于:企业或个人资质及荣誉方面材料；广告宣传资料、
+                    宣传册或产品包装印刷合同及发票；合同、销售发票；参展服务合同及发票、展会照片等等。</view>
+                    <view class="wx-h4">Q：注册商标无效宣告周期是多久？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    自注册商标无效宣告申请递交之日起，12个月左右可审查完毕，如有特殊
+                    情况延长6个月的审查期。</view>
+                    <view class="wx-h4">Q：申请商标无效宣告的重要性有哪些？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    1、商标无效宣告申请是防止已注册商标对自身商标造成淡化、弱化、丑化
+                    的重要途径。
+                        2、商标无效宣告能有效解决他人通过商标注册的形式损害权利人商标、版权、字号等在先权利。
+                        3、商标无效宣告申请是商标法赋予社会公众对侵犯自身权益的已注册商标所能够采取的最佳法律措
+                        施，当事人只有充分行使， 才能维护自身利益。
+                    </view>
+                    <view class="wx-h4">Q：商标无效宣告的理由有哪些？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标无效宣告的绝对理由包括:已经注册的商标，如果不具备可视性、显著
+                    性和合法性的，可以被宣告无效。另外，“以欺骗手段或者其他不正当手段取得注册”，也属于商标无效的
+                    理由。
+                        商标无效的相对理由包括:构成商标权相对无效的原因是商标权同在先取得的权利或其他合法权益相
+                        冲突。主要包括:因与他人在先权利冲突而无效；因侵犯他人驰名商标权而无效；因抢注他人未注册
+                        商标而无效；因违反代理或代表的规定而无效。
+                    </view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

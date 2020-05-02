@@ -1,0 +1,110 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price">
+                    <text class="wx-i">¥</text>
+                    <text class="wx-font">600</text>
+                    <text class="wx-i">/件</text>
+                </view>
+            </view>
+            <intention-marquee>
+                适用于需要变更自有商标的注册人名义、登记地址等注册事项（代理人、文件接收人）
+                的用户\t\t\t\t适用于需要变更自有商标的注册人名义、登记地址等注册事项（代理人、
+                文件接收人）的用户
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">商标在注册有效期限内，当其注册人变更其名义、地址、代理人，或者删减指定的商品的，
+                    应及时向商标局办理变更手续。 如果要改变注册商标的文字、图形，则应当重新提出商标注册
+                    申请，按照新的商标注册申请对待。 商标局对商标变更申请审查后，核发商标变更证明，不再
+                    另发商标注册证，原商标注册证与商标变更证明一起使用。 企业、事业单位和个体工商业者的
+                    名义改变后，必须履行变更手续后才能继续享有原有的商标专用权。 企业、事业单位和个体工
+                    商业者的地址改变后，若不进行商标变更备案，后续若商标被异议、撤三、无效，都无法及时收
+                    到商标局下发的通知，最终可能导致权利的丧失。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step6">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>准备商标变更材料</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>向商标局提交\n变更申请</text></view></view>
+                    <view class="step-cell step-cell-5"><view class="wx-p"><text>官方审查</text></view></view>
+                    <view class="step-cell step-cell-6"><view class="wx-p"><text>官方核发变更证明</text></view></view>
+                </view>
+            </view>
+            <view class="wx-article">
+                <view class="wx-section">
+                    <view class="intention-title"><view class="wx-span">常见问题</view></view>
+                    <view class="intention-sub-title">COMMON PROBLEMS</view>
+                    <view class="wx-h4">Q：申请商标变更需要注意的事项有哪些？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标注册人名义或者地址发生变更的，商标注册人应当将其全部注册商标一
+                    并变更（包括已上初审公告尚在公告期的商标），没有一并变更的视为放弃变更申请，会影响到商标注册人
+                    的权益。</view>
+                    <view class="wx-h4">Q：商标变更成功后，会重新下发商标证书吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标局会下发《商标变更核准证明》，此文件须同原商标证书一并使用，不
+                    再下发新的证书（但申请人可申请补发商标证书，此时，商标证书的信息为最新版）。</view>
+                    <view class="wx-h4">Q：我有好几个商标，这次只变一个，其他的不变可以吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    不可以。按照商标局的规定，商标变更必须是一并变更。也就是说，有几个
+                    商标就需要变更几个商标，否则的话商标局会将变更材料不予受理。</view>
+                    <view class="wx-h4">Q：企业地址变了，商标不做变更申请，可以继续使用吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    企业地址发生变化，商标必须办理变更手续，原因如下:1、商标局如有官方
+                    文件下发至申请人地址，申请人将无法获悉；2、申请人如做商标许可或转让，也需同时办理商标变更。</view>
+                    <view class="wx-h4">Q：企业名称变了，是做商标变更，还是商标转让？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    企业名称发生变化，是要办理商标变更；如企业因合并、兼并或改制而发生
+                    商标专用权移转的，应当到商标局办理注册商标的移转手续，即商标转让。</view>
+                    <view class="wx-h4">Q：企业拥有10个商标，如果企业名称（或地址）发生变化，可以只做核心类别的商标变更吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    同一企业名下的所有商标应一并办理变更申请，如仅办理部分类别，商标局
+                    也会下发补正通知要求一并办理。</view>
+                    <view class="wx-h4">Q：如果商标所有人名义先后经历过A/B/C三次变化，能一次从A变更为C么？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    如果商标局仅登记过A&C名义的商标，没有登记过B名义商标，只要工商局能
+                    够开具从A变更到C的变更证明，可以直接从A变为C。如果商标局登记过A/B/C三种名义申请的商标，就只能
+                    从A变更到B，再从B变更到C，申请材料可以一次性提交上去。</view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

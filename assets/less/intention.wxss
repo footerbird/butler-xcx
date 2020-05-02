@@ -1,0 +1,328 @@
+/*变量*/
+/*常用的一些混合*/
+.ellip {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.after-cls:after {
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.display-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.forbid {
+  opacity: 0.8 !important;
+  cursor: not-allowed;
+}
+.intention-page .intention-banner {
+  position: relative;
+  width: 100%;
+  height: 300rpx;
+  overflow: hidden;
+}
+.intention-page .intention-banner image {
+  width: 100%;
+  height: 100%;
+}
+.intention-page .intention-banner .price {
+  position: absolute;
+  left: 80rpx;
+  top: 200rpx;
+  font-size: 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #fff;
+  line-height: 30px;
+}
+.intention-page .intention-banner .price .wx-i {
+  position: relative;
+  bottom: -4px;
+  font-size: 16px;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+.intention-page .intention-banner .price .wx-font {
+  position: relative;
+  font-size: 30px;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+.intention-page .intention-banner .price .wx-font .hot {
+  position: absolute;
+  top: -8px;
+  right: -16px;
+  width: 18px;
+  height: 18px;
+  background: url(https://m.waitui.com/htdocs/mobile/images/entry/entry_subject_fire.png) no-repeat;
+  background-size: 100% 100%;
+}
+.intention-page .intention-summary {
+  background-color: #fff;
+  padding-bottom: 15px;
+}
+.intention-page .intention-summary .summary-box {
+  padding: 10px 15px;
+  border-bottom: 1px dashed #dae9ee;
+}
+.intention-page .intention-summary .summary-box .wx-p {
+  font-size: 13px;
+  color: #666;
+  line-height: 24px;
+}
+.intention-page .intention-flow {
+  background: url(https://m.waitui.com/htdocs/mobile/images/intention-flow-bg.png) #fff no-repeat;
+  background-position: center center;
+  padding: 50px 0 50px 0;
+}
+.intention-page .intention-flow .flow-step {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+  overflow: hidden;
+  background: url(https://m.waitui.com/htdocs/mobile/images/intention-flow.png) no-repeat;
+  background-position: top center;
+}
+.intention-page .intention-flow .flow-step .step-cell {
+  position: absolute;
+  display: table;
+  width: 150px;
+  height: 150px;
+  background: url(https://m.waitui.com/htdocs/mobile/images/intention-flow-cell.png) no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+}
+.intention-page .intention-flow .flow-step .step-cell .wx-p {
+  display: table-cell;
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 24px;
+}
+.intention-page .intention-flow .flow-step .step-cell-1 {
+  right: 50%;
+  top: 36px;
+  margin-right: 20px;
+}
+.intention-page .intention-flow .flow-step .step-cell-2 {
+  left: 50%;
+  top: 170px;
+  margin-left: 20px;
+}
+.intention-page .intention-flow .flow-step .step-cell-3 {
+  right: 50%;
+  top: 292px;
+  margin-right: 20px;
+}
+.intention-page .intention-flow .flow-step .step-cell-4 {
+  left: 50%;
+  top: 426px;
+  margin-left: 20px;
+}
+.intention-page .intention-flow .flow-step .step-cell-5 {
+  right: 50%;
+  top: 549px;
+  margin-right: 20px;
+}
+.intention-page .intention-flow .flow-step .step-cell-6 {
+  left: 50%;
+  top: 681px;
+  margin-left: 20px;
+}
+.intention-page .intention-flow .flow-step .step-cell-7 {
+  right: 50%;
+  top: 804px;
+  margin-right: 20px;
+}
+.intention-page .intention-flow .flow-step4 {
+  height: 612px;
+}
+.intention-page .intention-flow .flow-step5 {
+  height: 745px;
+}
+.intention-page .intention-flow .flow-step6 {
+  height: 868px;
+}
+.intention-page .intention-flow .flow-step7 {
+  height: 1000px;
+}
+.intention-page .intention-title {
+  font-size: 24px;
+  height: 54px;
+  line-height: 54px;
+  text-align: center;
+}
+.intention-page .intention-title .wx-span {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+.intention-page .intention-title:before {
+  content: '';
+  display: inline-block;
+  width: 100px;
+  height: 54px;
+  vertical-align: middle;
+  background: url(https://m.waitui.com/htdocs/mobile/images/intention-title-before.png) no-repeat;
+  background-position: center left;
+}
+.intention-page .intention-title:after {
+  content: '';
+  display: inline-block;
+  width: 100px;
+  height: 54px;
+  vertical-align: middle;
+  background: url(https://m.waitui.com/htdocs/mobile/images/intention-title-after.png) no-repeat;
+  background-position: center right;
+}
+.intention-page .intention-sub-title {
+  font-size: 14px;
+  font-family: 'Arial';
+  color: #666;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.intention-page .intention-page__title {
+  border-bottom: 1px solid #efefef;
+}
+.intention-page .intention-page__title .wx-span {
+  border-left: 5px solid #ea6f5a;
+  padding-left: 10px;
+  font-size: 14px;
+}
+.intention-page .van-button-area {
+  padding: 10px 16px;
+}
+.intention-page .home-link {
+  display: block;
+  width: 50%;
+  margin: 20px auto;
+}
+.intention-page .home-link image {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+.intention-page .customer-service {
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 25px;
+  font-size: 14px;
+  color: #13426b;
+  background: #fafafa;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.wx-article {
+  padding: 20px 15px;
+  font-size: 16px;
+  line-height: 1.8;
+  background-color: #fff;
+  color: #3d464d;
+}
+.wx-article .article-title {
+  padding: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.wx-article .article-author {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 48px;
+  margin-bottom: 20px;
+}
+.wx-article .article-author-figure {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.wx-article .article-author-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+.wx-article .article-author-time {
+  font-size: 14px;
+  color: #999;
+}
+.wx-article .article-summary {
+  position: relative;
+  font-size: 16px;
+  color: #666;
+  padding: 10px 10px 10px 36px;
+  background-color: #f7f7f7;
+  margin-bottom: 20px;
+}
+.wx-article .article-summary:before {
+  position: absolute;
+  content: "“";
+  font-size: 32px;
+  height: 36px;
+  top: 5px;
+  left: 10px;
+}
+.wx-article .wx-section {
+  margin-bottom: 1.5em;
+}
+.wx-article .wx-h1 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 0.9em;
+}
+.wx-article .wx-h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0.34em;
+}
+.wx-article .wx-h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0.34em;
+}
+.wx-article .wx-h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.wx-article .wx-p {
+  margin: 0 0 1em;
+}
+.wx-article .wx-strong {
+  font-weight: bold;
+}
+.wx-article navigator {
+  display: inline;
+  color: #3d464d;
+}
+.wx-article view {
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+.wx-article image {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}

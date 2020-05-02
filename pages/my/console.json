@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "控制台",
   "usingComponents": {
     "van-cell": "@vant/weapp/cell",
     "van-button": "@vant/weapp/button",

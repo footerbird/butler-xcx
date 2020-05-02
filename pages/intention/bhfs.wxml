@@ -1,0 +1,117 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price">
+                    <text class="wx-i">¥</text>
+                    <text class="wx-font">3500</text>
+                    <text class="wx-i">/件</text>
+                </view>
+            </view>
+            <intention-marquee>
+                适用于商标实质审查未通过，（在规定时效内）希望向商标局提交复审申请，
+                再次争取的用户\t\t\t\t适用于商标实质审查未通过，（在规定时效内）希望
+                向商标局提交复审申请，再次争取的用户
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">商标局在对商标进行实质审查时存在主观性，因此，申请注册的商标只要没有违反《商标法》的
+                    禁令条款，都可以申请商标驳回复审。商标驳回复审申请递交后，商标评审委员会会根据注册申请人
+                    提交的书面材料、使用证据等情况依法做出是否核准注册的决定。 目前从商标驳回复审案件判决结果
+                    整体情况来看，通过商标驳回复审取得商标权利的申请人数量不在少数，成功率较高。 在驳回复审阶
+                    段，如果可以提供以下证据，则可以极大提升复审成功率： 商标构思及使用情况（主要突出知名度）、
+                    企业简介、企业所获得的各项荣誉、企业最近三年销售、广告费用及相关财务情况、以及企业媒体
+                    报道或图片。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step7">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>专业代理人分析\n并评估成功概率</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>准备复审申请材料</text></view></view>
+                    <view class="step-cell step-cell-5"><view class="wx-p"><text>向商标局提交\n复审申请</text></view></view>
+                    <view class="step-cell step-cell-6"><view class="wx-p"><text>官方审查</text></view></view>
+                    <view class="step-cell step-cell-7"><view class="wx-p"><text>官方下发裁决</text></view></view>
+                </view>
+            </view>
+            <view class="wx-article">
+                <view class="wx-section">
+                    <view class="intention-title"><view class="wx-span">常见问题</view></view>
+                    <view class="intention-sub-title">COMMON PROBLEMS</view>
+                    <view class="wx-h4">Q：什么情况下需要申请商标驳回复审？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    当收到商标局下发的驳回通知书时，您对驳回理由不服，十五日之内可以
+                    向国家商标评审委员会提起驳回复审程序。</view>
+                    <view class="wx-h4">Q：商标驳回复审需要多少时间?</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标申请人在收到驳回通知书之日起15天内可以向国家商标评审委员会提
+                    起驳回复审申请，商评委会在9个月内发出复审的裁决决定</view>
+                    <view class="wx-h4">Q：商标复审不成功怎么办?</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    如果针对国家商评委下发的商标复审决定不服，可以向知识产权法院提起
+                    行政诉讼启动司法程序；如果是由于引证在先注册商标而被驳回，也可以重新提交注册申请，同时针对引
+                    证的在先注册商标提起撤三、无效宣告等手段扫清注册障碍。</view>
+                    <view class="wx-h4">Q：为什么商标被驳回了，还能通过申请复审获得成功？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    驳回复审之所以可能会成功，是因为商标驳回是国家商标局作出的审查决
+                    定，但是商标驳回复审申请是向商评委提出的，商标局与商评委的审查标准有所不同，表现在:
+                        商标局审查完全是根据递交的材料，不会考虑商标的实际使用情况；而如果提驳回复审的理由中有涉
+                        及商标实际使用情况的，商评委会考虑。对商标是否近似的判断，商标局与商评委的标准也略有不同
+                        :商标局基本是按照审查标准来审核，而商评委考虑的会比较全面。商标审查存在一定的主观性，不
+                        同审查员得出的结果可能有所不同。鉴于商标审查的存在一定的主观性，申请商标驳回复审是有可能
+                        获得商标成功注册的。当然，需要针对个案分析以制定保护策略。
+                    </view>
+                    <view class="wx-h4">Q：商标为什么会被驳回?</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    在注册的过程中，经过商标局实质审核后，认为有不能通过的理由，就会
+                    驳回，如:与在先申请过的商标近似或相同，或者商标中存在通用词等。</view>
+                    <view class="wx-h4">Q：收到商标驳回通知书后应该做什么?</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    企业注册申请的商标被驳回时会收到商标局发出的《商标驳回通知书》或
+                    《商标部分驳回通知书》后，我们的建议是:
+                        1、将《商标驳回通知书》或《商标部分驳回通知书》复印一份，并且保管好原件，也要保管好用来
+                        邮寄通知书的信封。如果是直接到商标局领取的，就没有信封，保管好通知书原件即可。
+                        2、根据信封上的邮戳或者是通知书背面左下角打印的收到时间计算出复审的截止日期，需要做驳回
+                        复审的一定要在截止日期之前提交驳回复审申请。
+                    </view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

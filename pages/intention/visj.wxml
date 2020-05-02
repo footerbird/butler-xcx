@@ -1,0 +1,72 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price"></view>
+            </view>
+            <intention-marquee>
+                VI设计有助于企业带来视觉的宣传作用，提升品牌辨识度，同时还能提高消费者对品牌
+                的忠诚度，加强企业文化建设。\t\t\t\tVI设计有助于企业带来视觉的宣传作用，提升品
+                牌辨识度，同时还能提高消费者对品牌的忠诚度，加强企业文化建设。
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">VI设计，即企业的视觉形象识别（VisualIdentity），是指在企业经营理念的指导下，运用平面
+                    设计等方法使企业内涵和市场定位视觉化、形象化。其包含VI基础和VI应用两大部分。A.VI基础：标志
+                    、标准字、标准色、辅助图形、辅助色等规范设计。B.VI应用：包装系列、展会、办公用品、户外广告
+                    、名片、画册等应用设计。VI设计对外宣传：(1)明确企业的市场定位，属企业无形资产的一个重要组
+                    成部分；(2)以形象的视觉形式宣传企业，传达企业的经营理念和企业文化；(3)与其他企业区分开来，
+                    使其具有明显的特征，确保企业的独特性和不可替代性，从而提升企业形象与知名度；(4)以自己特有的
+                    视觉符号系统吸引公众的注意力并产生记忆，使消费者对该企业所提供的产品或服务产生最高的品牌忠诚
+                    度；(5)企业外部环境的变化是不以企业意志为转移的，但当面对具有挑战性的外部因素时，VI能够有效
+                    地调节各种关系。VI设计对内：(1)提高员工对企业的认同感，激励员工士气；(2)吸引人才、确保生产
+                    力；(3)增强合作商、投资方的信赖和支持；(4)统一制作形式、节约制作成本；(5)方便内部管理、活用
+                    外部人员。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step4">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>品牌设计师分析\n并评估复杂度</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>获得VI设计图样</text></view></view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

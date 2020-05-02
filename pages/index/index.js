@@ -70,6 +70,13 @@ Page({
     that.setData({
       home_circle: parseInt(e.currentTarget.dataset.circle)
     });
+  },
+  
+  switchSolution(e) {
+    const that = this;
+    that.setData({
+      home_solution: parseInt(e.currentTarget.dataset.solution)
+    });
   }
   
 })

@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "企业名录",
   "usingComponents": {
     "van-loading": "@vant/weapp/loading"
   },

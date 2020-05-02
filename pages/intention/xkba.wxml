@@ -1,0 +1,108 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price">
+                    <text class="wx-i">¥</text>
+                    <text class="wx-font">600</text>
+                    <text class="wx-i">/件</text>
+                </view>
+            </view>
+            <intention-marquee>
+                适用于需要将自有商标授权许可他人使用的用户，需向商标局提交许可申请并报送
+                备案材料\t\t\t\t适用于需要将自有商标授权许可他人使用的用户，需向商标局提交
+                许可申请并报送备案材料
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">商标权人将其注册商标许可给他人使用，双方除了签署《商标使用许可合同》，以约定被许可使用人
+                    商标的形式、范围和相应对价外，更应当及时报送商标局备案，以免产生纠纷。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step6">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>准备许可备案材料</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>向商标局提交\n许可备案申请</text></view></view>
+                    <view class="step-cell step-cell-5"><view class="wx-p"><text>官方审查</text></view></view>
+                    <view class="step-cell step-cell-6"><view class="wx-p"><text>官方核发\n许可备案证明</text></view></view>
+                </view>
+            </view>
+            <view class="wx-article">
+                <view class="wx-section">
+                    <view class="intention-title"><view class="wx-span">常见问题</view></view>
+                    <view class="intention-sub-title">COMMON PROBLEMS</view>
+                    <view class="wx-h4">Q：商标许可备案有什么好处？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    满足许可方与被许可方实现双赢的需求:许可方拥有更多商标使用证据、
+                    预防商标被侵权；被许可方借助该商标打开市场，增加收益</view>
+                    <view class="wx-h4">Q：商标许可备案需提交的材料</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    1、商标注册证复印件。2、商标使用许可合同。3、许可方与被许可方
+                    营业执照或身份证复印件。4、商标使用许可合同备案申请书。</view>
+                    <view class="wx-h4">Q：同时办理几件商标许可备案可以只签订一份合同吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    不可以。每一件商标应签定一份许可合同。</view>
+                    <view class="wx-h4">Q：商标许可协议提前终止，相应的备案是否需要变更？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标许可协议提前终止的，应当向商标局提交商标许可提前终止备案。</view>
+                    <view class="wx-h4">Q：不向商标局做许可备案，仅通过合同约定的方式，可以将商标许可他人使用吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    可以使用，但如有善意的第三方侵犯了被许可人的权益，则无法通过
+                    正当程序获得相应的赔偿。建议先许可备案，再使用。</view>
+                    <view class="wx-h4">Q：商标持有人将商标的使用权许可给别人后，自己还能使用吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标许可有三种方式:普通许可、排他许可、独占许可；
+                        普通许可:商标持有人可多次许可，许可人和被许可人均可使用；
+                        排他许可:仅限许可人和被许可人使用，第三方不可使用；
+                        独占许可:仅限被许可人使用，许可人及其他第三方均不可使用。
+                    </view>
+                    <view class="wx-h4">Q：商标许可的期限可以自行约定吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标许可的期限可在商标专用权有效期内自行约定。</view>
+                    <view class="wx-h4">Q：商标许可协议到期未续签，但是继续使用是否属于商标侵权？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标许可协议中如果没有明确约定协议到期后自动续期，到期后继续使
+                    用该商标的行为就属于侵权行为。商标所有人可以要求使用人支付超期使用应支付的许可费用，也可以
+                    追究对方商标侵权的责任。</view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

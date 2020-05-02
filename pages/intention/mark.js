@@ -1,4 +1,3 @@
-// pages/intention/mark.js
 const { Valid } = require('../../utils/util.js');
 import Toast from '@vant/weapp/toast/toast';
 

@@ -1,0 +1,90 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price">
+                    <text class="wx-i">¥</text>
+                    <text class="wx-font">3500</text>
+                    <text class="wx-i">/件</text>
+                </view>
+            </view>
+            <intention-marquee>
+                适用于注册商标被宣告无效后，（在规定时效内）向商标局提交答辩，以维护自身
+                商标权益的用户\t\t\t\t适用于注册商标被宣告无效后，（在规定时效内）向商标局
+                提交答辩，以维护自身商标权益的用户
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">商标评审委员会收到宣告注册商标无效的申请后应当书面通知有关当事人，并限期（自收到通知
+                    书30天内办理）提出答辩。商标被申请无效若放弃答辩将直接面临注册商标被撤销的风险。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step7">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>专业代理人分析\n无效宣告理由并评估</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>准备无效宣告\n答辩材料</text></view></view>
+                    <view class="step-cell step-cell-5"><view class="wx-p"><text>向商标局提交\n答辩材料申请</text></view></view>
+                    <view class="step-cell step-cell-6"><view class="wx-p"><text>官方审查</text></view></view>
+                    <view class="step-cell step-cell-7"><view class="wx-p"><text>官方下发裁决</text></view></view>
+                </view>
+            </view>
+            <view class="wx-article">
+                <view class="wx-section">
+                    <view class="intention-title"><view class="wx-span">常见问题</view></view>
+                    <view class="intention-sub-title">COMMON PROBLEMS</view>
+                    <view class="wx-h4">Q：申请无效宣告除了准备基本申请材料外，还需要哪些证据？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    需要提供的主要证据材料有：企业或个人资质及荣誉方面材料；广告宣传
+                    资料、宣传册或产品包装印刷合同及发票；合同、销售发票；参展服务合同及发票、展会照片等。</view>
+                    <view class="wx-h4">Q：商标被提出无效宣告申请后为什么要进行答辩？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    （1）商标被提出无效宣告后若放弃答辩，将直接面临商标被无效的风险。
+                     （2）无效宣告答辩是商标法赋予当事人的法定权利，同时也是当事人向商标评审委员会反驳申请方观点
+                     的唯一途径。 （3）商标评审委员会对无效宣告案件进行书面审理，不答辩无疑将增加对方无效宣告成
+                     功机率，而答辩无疑将增加成功机率。</view>
+                    <view class="wx-h4">Q：什么时间可以提出注册商标无效宣告申请？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    注册商标核准之日起，五年内可以提出注册商标无效宣告申请，对恶意注
+                    册的，驰名商标所有人不受五年的时间限制。</view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>

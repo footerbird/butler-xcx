@@ -1,0 +1,109 @@
+<view style="height: 100%;" class="bg-white">
+
+    <view class="container">
+
+        <view class="intention-page">
+            
+            <view class="intention-banner">
+                <image mode="widthFix" src="/assets/images/intention-banner.png" width="100%" />
+                <view class="price">
+                    <text class="wx-i">¥</text>
+                    <text class="wx-font">1000</text>
+                    <text class="wx-i">/件</text>
+                </view>
+            </view>
+            <intention-marquee>
+                适用于注册商标有效期（十年）满前（在规定时效内）希望向商标局提交申请，
+                以保有原商标的用户\t\t\t\t适用于注册商标有效期（十年）满前（在规定时效内）
+                希望向商标局提交申请，以保有原商标的用户
+            </intention-marquee>
+            <view class="bg-white">
+                <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
+                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                 maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
+            </view>
+        
+            <view class="van-button-area">
+                <van-button type="primary" color="#ea6f5a"
+                custom-style="font-size: 18px;" block
+                bindtap="submitIntention">提交</van-button>
+            </view>
+            
+            <!-- 业务介绍 -->
+            <view class="intention-summary">
+                <view class="summary-box">
+                    <view class="wx-p" style="text-indent: -6px;">【注释】</view>
+                    <view class="wx-p">注册商标的有效期是10年，有效期满后需要继续使用的，应当在期满前12个月内申请续展注册；
+                    在此期间未能提出申请的。到期未续展的商标，则会注销其注册商标。如果因权利人疏忽，导致商标
+                    权无效后被他人合法抢注的话，之前所积累的所有品牌价值和市场投入都是为他人做嫁衣裳。 商标
+                    局对商标续展注册申请审查后，核发商标续展证明，不再另发商标注册证，原商标注册证与商标续展
+                    证明一起使用。 商标的知名度，在很大程度上依赖于广告宣传及商标使用年限，长久持有并运营一个
+                    商标权价值更大，因此商标续展尤为重要。</view>
+                </view>
+            </view>
+            <!-- 服务流程 -->
+            <view class="intention-flow pt20">
+                <view class="intention-title"><view class="wx-span">服务流程</view></view>
+                <view class="intention-sub-title">SERVICE PROCESS</view>
+                <view class="flow-step flow-step6">
+                    <view class="step-cell step-cell-1"><view class="wx-p"><text>品牌顾问沟通\n了解业务需求</text></view></view>
+                    <view class="step-cell step-cell-2"><view class="wx-p"><text>外推网业务下单\n并成功付款</text></view></view>
+                    <view class="step-cell step-cell-3"><view class="wx-p"><text>准备商标续展材料</text></view></view>
+                    <view class="step-cell step-cell-4"><view class="wx-p"><text>向商标局提交\n续展申请</text></view></view>
+                    <view class="step-cell step-cell-5"><view class="wx-p"><text>官方审查</text></view></view>
+                    <view class="step-cell step-cell-6"><view class="wx-p"><text>官方核发续展证明</text></view></view>
+                </view>
+            </view>
+            <view class="wx-article">
+                <view class="wx-section">
+                    <view class="intention-title"><view class="wx-span">常见问题</view></view>
+                    <view class="intention-sub-title">COMMON PROBLEMS</view>
+                    <view class="wx-h4">Q：为什么要及时办理商标续展？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标注册在有效期满前，商标所有人应及时在商标注册机关办理续展
+                    注册手续。不要使商标过期失效，失去商标专用权。</view>
+                    <view class="wx-h4">Q：商标续展需要多长时间？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    1、准备申请文件，向官方提交商标续展注册申请。2、商标局审查，
+                    3~6个月会核发续展注册商标证明。</view>
+                    <view class="wx-h4">Q：商标续展后的有效期是多久？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    商标续展可以延长商标专用权10年，不限续展次数</view>
+                    <view class="wx-h4">Q：未在有效期内及时商标续展，怎么办？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    已注册的商标期满之日起6个月内希望仍继续保有该商标，可以办理
+                    商标宽展申请，继续保有该商标。</view>
+                    <view class="wx-h4">Q：办理商标续展申请，商标局会发受理通知书吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    续展申请不下发受理通知书，下发的是《核准续展注册证明》，上面
+                    会写明续展后的商标权有效的起始日和终止日。注意原商标注册证也要妥善保管，以便和续展证明一
+                    起使用。</view>
+                    <view class="wx-h4">Q：我的商标有效期快到了，我的企业也搬迁了，可否在商标续展时同时办理商标变更？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    可以一并办理商标续展和商标变更</view>
+                    <view class="wx-h4">Q：我的商标有效期快到了，我可以将商标售出吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    可以售出，为了保证您在售出前一直持有商标专用权，建议您尽快办理
+                    商标续展，也可以在做商标转让时一并办理商标续展。</view>
+                    <view class="wx-h4">Q：我的商标证书丢了，商标有效期快到了，我能办理续展吗？</view>
+                    <view class="wx-p"><text class="wx-strong">A：</text>
+                    可以办理续展，也可以在办理续展时一并办理补发商标证。</view>
+                </view>
+            </view>
+            
+            <view class="ta-c pb20">
+                <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
+                <navigator class="home-link" url="/pages/index/index">
+                    <image mode="widthFix" src="/assets/images/intention-logo.png" />
+                </navigator>
+            </view>
+        
+        </view>
+
+    </view>
+    
+    <van-toast id="van-toast" />
+
+</view>
