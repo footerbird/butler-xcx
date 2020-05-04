@@ -1,0 +1,43 @@
+<view style="height: 100%;">
+
+    <view class="container">
+
+        <block wx:if="{{ page_loading }}">
+        <view class="loading-box ta-c">
+            <van-loading size="24px" vertical>加载中...</van-loading>
+        </view>
+        </block>
+        <block wx:else>
+        <view class="sort-block">
+            <view class="title">商标分类是什么？</view>
+            <view class="summary">
+                <view class="wx-p">商标是区别商品或服务来源的一种标志，每一个注册商标都是指定用于某一商品或服务上的。正是为了
+                商标检索、审查、管理工作的需要，把某些具有共同属性的商品组合到一起，编为一个类，将所有商品及服
+                务共划分为45个类别，形成了商标分类表——“商标注册用商品和服务分类”。</view>
+            </view>
+            <view class="list">
+                <block wx:for="{{ mark_category }}" wx:for-item="category" wx:key="category_id">
+                <navigator class="item"
+                 url="/pages/mark/sort_group?code={{ category.category_code }}">
+                    <image mode="widthFix" class="item-thumb"
+                      src="/assets/images/sort/type{{ category.category_id }}.png" />
+                    <view class="item-title">{{ category.category_code }}类\t\t
+                    {{ category.category_name }}</view>
+                    <view class="item-summary">{{ category.description }}</view>
+                </navigator>
+                </block>
+                <view class="wx-a item">
+                    <image src="/assets/images/logo.png" mode="widthFix" class="item-thumb" />
+                    <view class="item-title">基于\t\t尼斯分类</view>
+                    <view class="item-summary">截至2020年，商标国际分类共包括45类，其中商品34类，服务项目
+                    11类，共包含一万多个商品和服务项目。申请人所需填报的商品及服务一般说来都在其中了。不仅所有
+                    尼斯联盟成员国都使用此分类表，而且，非尼斯联盟成员国也可以使用该分类表。所不同的是，尼斯联
+                    盟成员可以参与分类表的修订，而非成员国则无权参与。</view>
+                </view>
+            </view>
+        </view>
+        </block>
+
+    </view>
+
+</view>

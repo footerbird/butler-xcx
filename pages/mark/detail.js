@@ -84,7 +84,7 @@ Page({
 
   },
   
-  load_markDetail: function (regno_md) {
+  load_markDetail(regno_md) {
     const that = this;
     wx.request({
       url: 'https://m.waitui.com/api/get_markDetail',

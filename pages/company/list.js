@@ -77,7 +77,7 @@ Page({
 
   },
   
-  load_companyAjax: function () {
+  load_companyAjax() {
     const that = this;
     if(that.data.company_finished) return;
     if(that.data.company_loading) return;

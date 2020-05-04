@@ -77,7 +77,7 @@ Page({
 
   },
   
-  load_markAjax: function () {
+  load_markAjax() {
     const that = this;
     if(that.data.mark_finished) return;
     if(that.data.mark_loading) return;

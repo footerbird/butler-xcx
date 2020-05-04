@@ -94,7 +94,7 @@ Page({
 
   },
   
-  load_companyDetail: function (company_id) {
+  load_companyDetail(company_id) {
     const that = this;
     wx.request({
       url: 'https://m.waitui.com/api/get_companyDetail',

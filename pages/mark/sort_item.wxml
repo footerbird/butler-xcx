@@ -1,0 +1,57 @@
+<view style="height: 100%;">
+
+    <view class="container">
+
+        <block wx:if="{{ page_loading }}">
+        <view class="loading-box ta-c">
+            <van-loading size="24px" vertical>加载中...</van-loading>
+        </view>
+        </block>
+        <block wx:else>
+        <view class="sort-detail">
+            <view class="info-table">
+                <view class="table-left">
+                    <view class="item-box">
+                        <block wx:for="{{ category.groups }}" wx:for-item="group" wx:key="category_id">
+                        <view class="wx-a item {{ group_code === group.category_code ? 'cur' : '' }}"
+                        data-code="{{ group.category_code }}" bindtap="toggleLeftMenu">
+                            【{{ group.category_code }}】
+                        </view>
+                        </block>
+                    </view>
+                </view>
+                <block wx:if="{{ items.length === 0 }}">
+                <view class="loading-box ta-c">
+                    <van-loading size="24px" vertical>加载中...</van-loading>
+                </view>
+                </block>
+                <block wx:else>
+                <view class="table-right">
+                    <view class="item-box">
+                        <block wx:for="{{ category.groups }}" wx:for-item="group" wx:key="category_id">
+                        <view class="item-title" wx:if="{{ group_code === group.category_code }}">
+                        {{ group.category_name }}
+                        </view>
+                        </block>
+                        <block wx:for="{{ items }}" wx:for-item="item" wx:key="category_id">
+                        <view class="wx-a item" wx:if="{{ item.category_code === '' }}">
+                            <view class="item-wrap">
+                                <text>{{ item.category_code }}\t\t{{ item.category_name }}</text>
+                            </view>
+                        </view>
+                        <view class="wx-a item" wx:else>
+                            <view class="item-wrap">
+                                <text>{{ item.category_name }}</text>
+                            </view>
+                        </view>
+                        </block>
+                    </view>
+                </view>
+                </block>
+            </view>
+        </view>
+        </block>
+
+    </view>
+
+</view>

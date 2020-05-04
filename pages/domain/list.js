@@ -77,7 +77,7 @@ Page({
 
   },
   
-  load_domainAjax: function () {
+  load_domainAjax() {
     const that = this;
     if(that.data.domain_finished) return;
     if(that.data.domain_loading) return;

@@ -1,4 +1,4 @@
-// pages/brand/detail.js
+// pages/mark/sort_group.js
 Page({
 
   /**
@@ -6,18 +6,15 @@ Page({
    */
   data: {
     page_loading: true,
-    brand: {
-      brand_name: '',
-      brand_lead: '',
-      poster_path: '',
-      brand_content: '',
-      brand_company: '',
-      brand_legal: '',
-      brand_phone: '',
-      brand_origin: '',
-      brand_start: '',
-    },
-    company: null
+    mark_category: [],
+    category: {
+      category_id: '',
+      category_code: '',
+      category_name: '',
+      category_use: '',
+      description: '',
+      groups: []
+    }
   },
 
   /**
@@ -25,7 +22,7 @@ Page({
    */
   onLoad: function (options) {
     const that = this;
-    that.load_brandDetail(options.brand_id);
+    that.load_markSortItem(options.code);
   },
 
   /**
@@ -77,17 +74,31 @@ Page({
 
   },
   
-  load_brandDetail(brand_id) {
+  toggleLeftMenu(e) {
     const that = this;
+    const targetCode = e.currentTarget.dataset.code;
+    that.setData({
+      'category.category_code': targetCode
+    });
+    wx.nextTick(() => {
+      that.load_markSortItem(targetCode);
+    });
+  },
+  
+  load_markSortItem(code) {
+    const that = this;
+    that.setData({
+      'category.groups': []
+    });
     wx.request({
-      url: 'https://m.waitui.com/api/get_brandDetail',
+      url: 'https://m.waitui.com/api/get_markSortItem',
       data: {
-        brand_id: brand_id
+        code: code
       },
       success ({ data }) {
         that.setData({
-          brand: data.brand,
-          company: data.company,
+          mark_category: data.mark_category,
+          category: data.category,
           page_loading: false
         });
       }

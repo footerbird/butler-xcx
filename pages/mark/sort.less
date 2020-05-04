@@ -1,0 +1,132 @@
+/*变量*/
+@base-color: #ea6f5a;//基本色号
+@my-color: #13426b;//控制中心色号
+
+
+
+/*常用的一些混合*/
+.ellip{//超出隐藏或换行
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.after-cls{//清除浮动
+    &:after{
+        content: " "; display: block; height: 0;
+        visibility: hidden; clear: both;
+    }
+}
+.display-flex{//flex布局
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.flex-number(@num: 1){
+    -webkit-box-flex: @num;
+    -webkit-flex: @num;
+    flex: @num;
+}
+.border-box(){//盒模型
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.border-radius(@radius: 0){//边框圆角
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+.opacity(@opacity: 1){//透明度
+    @opacityPercentage: @opacity * 100;
+    filter:alpha(opacity=@opacityPercentage);
+    -moz-opacity: @opacity;
+    opacity: @opacity;
+}
+.transition-all(@time: .2s){//动画过渡
+    -webkit-transition: all linear @time;
+    transition: all linear @time;
+}
+.forbid{//禁止点击
+    opacity: .8 !important;
+    cursor: not-allowed;
+}
+
+
+
+.sort-block{
+    margin-top: 10px;
+    padding: 15rpx;
+    background-color: #fff;
+    .title{
+        position: relative;
+        font-size: 16px;
+        font-weight: bold;
+        height: 48px;
+        line-height: 50px;
+        padding-left: 20px;
+        border-bottom: 1px dashed #dae9ee;
+        &:after{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 3px;
+            height: 20px;
+            background-color: #00c1de;
+            margin-top: -10px;
+        }
+    }
+    .summary{
+        font-size: 13px;
+        color: #666;
+        text-indent: 26px;
+        line-height: 24px;
+        padding: 20px 15rpx 15px 15rpx;
+    }
+    .list{
+        .after-cls;
+        .item{
+            float: left;
+            position: relative;
+            width: 330rpx;
+            overflow: hidden;
+            padding: 10px 10px 10px 15px;
+            border: 1px solid #e5e5e5;
+            margin: 15rpx;
+            .item-thumb{
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                width: 32px;
+                .border-radius(50%);
+            }
+            .item-title{
+                padding-right: 5px;
+                font-size: 14px;
+                font-weight: bold;
+                color: #333;
+                text-align: right;
+                line-height: 32px;
+                margin-bottom: 10px;
+            }
+            .item-summary{
+                font-size: 12px;
+                color: #666;
+                line-height: 18px;
+                width: 100%;
+                height: 125px;
+                overflow: hidden;
+            }
+            &:hover{
+                border-color: #00c1de;
+            }
+            &.cur{
+                .item-title{
+                    color: @base-color;
+                }
+            }
+        }
+    }
+}

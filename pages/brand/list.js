@@ -77,7 +77,7 @@ Page({
 
   },
   
-  load_brandAjax: function () {
+  load_brandAjax() {
     const that = this;
     if(that.data.brand_finished) return;
     if(that.data.brand_loading) return;

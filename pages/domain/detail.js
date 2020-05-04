@@ -75,7 +75,7 @@ Page({
 
   },
   
-  load_domainDetail: function (domain_name) {
+  load_domainDetail(domain_name) {
     const that = this;
     wx.request({
       url: 'https://m.waitui.com/api/get_domainDetail',
