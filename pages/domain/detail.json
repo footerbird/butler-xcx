@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "域名市场",
   "usingComponents": {
-    "van-loading": "@vant/weapp/loading"
+    "van-loading": "@vant/weapp/loading/index"
   }
 }

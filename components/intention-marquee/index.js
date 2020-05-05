@@ -20,7 +20,6 @@ Component({
       const that = this;
       that.showMarqueeLeft(25);
     },
-    moved: function () { },
     detached: function () { },
   },
 

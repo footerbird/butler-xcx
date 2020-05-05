@@ -12,7 +12,7 @@
                 </navigator>
             </swiper-item>
             <swiper-item>
-                <navigator class="swiper-slide" url="/pages/domain/list">
+                <navigator open-type="switchTab" class="swiper-slide" url="/pages/domain/list">
                     <image src="/assets/images/ad/ad-domain-market.png" />
                 </navigator>
             </swiper-item>

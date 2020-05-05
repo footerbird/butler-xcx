@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "企业名录",
   "usingComponents": {
-    "van-loading": "@vant/weapp/loading"
+    "van-loading": "@vant/weapp/loading/index"
   },
   "backgroundTextStyle": "dark",
   "enablePullDownRefresh": true

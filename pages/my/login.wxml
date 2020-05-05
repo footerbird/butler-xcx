@@ -37,8 +37,8 @@ module.exports = {
     <view class="container bg-white">
 
         <view class="login-form">
-            <view>
-                <van-field value="{{ phone_num }}" type="tel" maxlength="11" clearable bindinput="phoneNumInput"
+            <van-cell-group>
+                <van-field value="{{ phone_num }}" type="tel" maxlength="11" clearable bind:input="phoneNumInput"
                   class="login-input" placeholder="输入手机号"
                   custom-style="font-size: 16px; height: 55px; line-height:55px; padding: 0;" >
                     <!-- 这里的插值是为了让行高起效果 -->
@@ -46,7 +46,7 @@ module.exports = {
                 </van-field>
                 <!-- 下面的显示隐藏必须用v-show,不能用v-if，不然field输入框插值无效 -->
                 <view hidden="{{ login_type != 'pwd_login' }}">
-                <van-field value="{{ pwd_num }}" type="password" clearable bindinput="pwdNumInput"
+                <van-field value="{{ pwd_num }}" type="password" clearable bind:input="pwdNumInput"
                   class="login-input" placeholder="输入密码"
                   custom-style="font-size: 16px; height: 55px; line-height:55px; padding: 0;">
                     <!-- 这里的插值是为了让行高起效果 -->
@@ -54,21 +54,21 @@ module.exports = {
                 </van-field>
                 </view>
                 <view hidden="{{ login_type != 'sms_login' }}">
-                <van-field value="{{ code_num }}" clearable bindinput="codeNumInput"
+                <van-field value="{{ code_num }}" clearable bind:input="codeNumInput"
                   class="login-input" placeholder="输入验证码"
                   custom-style="font-size: 16px; height: 55px; line-height:55px; padding: 0;">
                     <van-button slot="button" size="small" type="default" disabled="{{ computed.forbid_code_btn(phone_num,sending_code) }}"
-                      bindtap="sendCodeLogin"
+                      bind:click="sendCodeLogin"
                       custom-style="font-size: 14px; border: none;">{{ code_msg }}</van-button>
                 </van-field>
                 </view>
-            </view>
+            </van-cell-group>
             <view style="position: relative; padding-top: 120rpx;">
                 <navigator class="wx-a login-forget-pwd" url="/pages/my/findpwd">忘记密码？</navigator>
                 <van-button type="primary" color="#ea6f5a" custom-style="font-size: 18px;"
                   disabled="{{ computed.forbid_login_btn(login_type,phone_num,code_num,pwd_num,sending_login) }}"
                   block loading="{{ sending_login }}"
-                  bindtap="funcLogin">登录</van-button>
+                  bind:click="funcLogin">登录</van-button>
             </view>
             <view class="login-link-box">
                 <block wx:if="{{ login_type == 'pwd_login' }}">

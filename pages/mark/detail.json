@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "商标市场",
   "usingComponents": {
-    "van-loading": "@vant/weapp/loading"
+    "van-loading": "@vant/weapp/loading/index"
   }
 }

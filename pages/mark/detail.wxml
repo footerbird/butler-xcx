@@ -67,9 +67,9 @@
             <view class="info-list">
                 <view class="wx-h4">商标详情信息</view>
                 <view class="wx-dl pt10"><view class="wx-dt">初审公告期号</view><view class="wx-dd">{{ mark.announce_issue }}</view></view>
-                <view class="wx-dl"><view class="wx-dt">初审公告日期</view><view class="wx-dd">{{ mark.announce_date | date_format }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">初审公告日期</view><view class="wx-dd">{{ filter.date_format(mark.announce_date) }}</view></view>
                 <view class="wx-dl"><view class="wx-dt">注册公告期号</view><view class="wx-dd">{{ mark.reg_issue }}</view></view>
-                <view class="wx-dl"><view class="wx-dt">注册公告日期</view><view class="wx-dd">{{ mark.reg_date | date_format }}</view></view>
+                <view class="wx-dl"><view class="wx-dt">注册公告日期</view><view class="wx-dd">{{ filter.date_format(mark.reg_date) }}</view></view>
                 <view class="wx-dl"><view class="wx-dt">专用权期限</view><view class="wx-dd">{{ mark.private_limit }}</view></view>
                 <view class="wx-dl"><view class="wx-dt">类似群</view><view class="wx-dd ellip">{{ mark.mark_group }}</view></view>
                 <view class="wx-dl"><view class="wx-dt">商品/服务</view><view class="wx-dd">{{ mark.app_range }}</view></view>

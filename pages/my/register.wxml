@@ -32,32 +32,32 @@ module.exports = {
     <view class="container bg-white">
 
         <view class="login-form">
-            <view>
-                <van-field value="{{ phone_reg }}" type="tel" maxlength="11" clearable bindinput="phoneRegInput"
+            <van-cell-group>
+                <van-field value="{{ phone_reg }}" type="tel" maxlength="11" clearable bind:input="phoneRegInput"
                   class="login-input" placeholder="输入手机号"
                   custom-style="font-size: 16px; height: 55px; line-height:55px; padding: 0;" >
                     <!-- 这里的插值是为了让行高起效果 -->
                     <van-button slot="button" custom-style="width: 0; min-width: 0; padding: 0; border: none;"></van-button>
                 </van-field>
-                <van-field value="{{ code_reg }}" clearable bindinput="codeRegInput"
+                <van-field value="{{ code_reg }}" clearable bind:input="codeRegInput"
                   class="login-input" placeholder="输入验证码"
                   custom-style="font-size: 16px; height: 55px; line-height:55px; padding: 0;">
                     <van-button slot="button" size="small" type="default" disabled="{{ computed.forbid_code_btn(phone_reg,sending_code) }}"
-                      bindtap="sendCodeRegister"
+                      bind:click="sendCodeRegister"
                       custom-style="font-size: 14px; border: none;">{{ code_msg }}</van-button>
                 </van-field>
-                <van-field value="{{ pwd_reg }}" type="password" clearable bindinput="pwdRegInput"
+                <van-field value="{{ pwd_reg }}" type="password" clearable bind:input="pwdRegInput"
                   class="login-input" placeholder="设置密码"
                   custom-style="font-size: 16px; height: 55px; line-height:55px; padding: 0;">
                     <!-- 这里的插值是为了让行高起效果 -->
                     <van-button slot="button" custom-style="width: 0; min-width: 0; padding: 0; border: none;"></van-button>
                 </van-field>
-            </view>
+            </van-cell-group>
             <view style="position: relative; padding-top: 120rpx;">
                 <van-button type="primary" color="#ea6f5a" custom-style="font-size: 18px;"
                   disabled="{{ computed.forbid_register_btn(phone_reg,code_reg,pwd_reg,sending_register) }}"
                   block loading="{{ sending_register }}"
-                  bindtap="funcRegister">注册</van-button>
+                  bind:click="funcRegister">注册</van-button>
             </view>
         </view>
 

@@ -35,13 +35,13 @@
         </view>
     </view>
     
-    <view class="mt15">
+    <van-cell-group custom-class="mt15">
         <van-cell title="我的订单" value="{{ orderCount }}" is-link />
         <van-cell title="我的域名" value="{{ domainCount }}" is-link />
         <van-cell title="我的商标" value="{{ markCount }}" is-link />
-    </view>
+    </van-cell-group>
     
-    <view class="mt15">
+    <van-cell-group custom-class="mt15">
         <van-cell is-link >
           <!-- 使用 title 插槽来自定义标题 -->
           <view slot="title">
@@ -61,16 +61,16 @@
           </view>
         </van-cell>
         <van-cell title="登录日志" is-link />
-    </view>
+    </van-cell-group>
     
-    <view class="mt15">
+    <van-cell-group custom-class="mt15">
         <van-cell title="关于我们" is-link url="/pages/help/about" />
         <van-cell title="用户协议" is-link url="/pages/help/agreement" />
-    </view>
+    </van-cell-group>
     
     <van-button type="default" block
       custom-style="color: #ea6f5a; margin-top: 15px;"
-      bindtap="logoutSuccess">退出登录</van-button>
+      bind:click="logoutSuccess">退出登录</van-button>
     </block>
     
     
@@ -102,13 +102,13 @@
         </view>
     </view>
     
-    <view class="mt15">
+    <van-cell-group custom-class="mt15">
         <van-cell title="我的订单" is-link url="/pages/my/login" />
         <van-cell title="我的域名" is-link url="/pages/my/login" />
         <van-cell title="我的商标" is-link url="/pages/my/login" />
-    </view>
+    </van-cell-group>
     
-    <view class="mt15">
+    <van-cell-group custom-class="mt15">
         <van-cell is-link url="/pages/my/login" >
           <!-- 使用 title 插槽来自定义标题 -->
           <view slot="title">
@@ -116,12 +116,12 @@
           </view>
         </van-cell>
         <van-cell title="登录日志" is-link url="/pages/my/login" />
-    </view>
+    </van-cell-group>
     
-    <view class="mt15">
+    <van-cell-group custom-class="mt15">
         <van-cell title="关于我们" is-link url="/pages/help/about" />
         <van-cell title="用户协议" is-link url="/pages/help/agreement" />
-    </view>
+    </van-cell-group>
     </block>
     
     <van-toast id="van-toast" />

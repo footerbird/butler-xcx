@@ -13,18 +13,18 @@
                 可以全面、详细地介绍公司产品及公司服务。\t\t\t\t官网和小程序在线上的持续
                 曝光，极大降低了企业的获客成本，面向全球客户，可以全面、详细地介绍公司产品及公司服务。
             </intention-marquee>
-            <view class="bg-white">
+            <van-cell-group>
                 <view class="intention-page__title pt10 pb10"><text class="wx-span">为了更好的了解您的需求，请完善以下信息</text></view>
-                <van-field value="{{ intention_name }}" bindinput="intentionNameInput" placeholder="联系姓名" />
-                <van-field value="{{ intention_phone }}" bindinput="intentionPhoneInput" type="tel" placeholder="手机号码" />
-                <van-field value="{{ description }}" bindinput="descriptionInput" type="textarea" rows="2" autosize
+                <van-field value="{{ intention_name }}" bind:input="intentionNameInput" placeholder="联系姓名" />
+                <van-field value="{{ intention_phone }}" bind:input="intentionPhoneInput" type="tel" placeholder="手机号码" />
+                <van-field value="{{ description }}" bind:input="descriptionInput" type="textarea" rows="2" autosize
                  maxlength="50" show-word-limit placeholder="请输入详细信息,例如预算" />
-            </view>
+            </van-cell-group>
         
             <view class="van-button-area">
                 <van-button type="primary" color="#ea6f5a"
                 custom-style="font-size: 18px;" block
-                bindtap="submitIntention">提交</van-button>
+                bind:click="submitIntention">提交</van-button>
             </view>
             
             <!-- 业务介绍 -->
@@ -51,7 +51,7 @@
             
             <view class="ta-c pb20">
                 <view class="customer-service"><text>联系品牌客服 - 小智\t\t18767172019</text></view>
-                <navigator class="home-link" url="/pages/index/index">
+                <navigator open-type="switchTab" class="home-link" url="/pages/index/index">
                     <image mode="widthFix" src="/assets/images/intention-logo.png" />
                 </navigator>
             </view>

@@ -7,7 +7,7 @@ var number_format = function(value){
 }
 
 var date_format = function(value){
-  return value.substring(0, 9)
+  return value.trim().substring(0, 10)
 }
 
 var format_marksort_cnchar = function(num){

@@ -1,9 +1,10 @@
 {
   "navigationBarTitleText": "财税记账",
   "usingComponents": {
-    "van-button": "@vant/weapp/button",
-    "van-field": "@vant/weapp/field",
-    "van-toast": "@vant/weapp/toast",
+    "van-button": "@vant/weapp/button/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-toast": "@vant/weapp/toast/index",
     "intention-marquee": "/components/intention-marquee/index"
   }
 }
