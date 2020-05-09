@@ -47,7 +47,7 @@
           <view slot="title">
             公司认证<text class="wx-span f14 col-gray9 ml15">(开发中)</text>
           </view>
-          <view slot="default">
+          <view>
             <block wx:if="{{ company_certify != '' }}">
                 <block wx:if="{{ company_certify.status == 'failed' }}">
                 <text class="wx-span f14 col-warn">认证失败</text>
