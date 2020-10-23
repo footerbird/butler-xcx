@@ -66,6 +66,7 @@
     <van-cell-group custom-class="mt15">
         <van-cell title="关于我们" is-link url="/pages/help/about" />
         <van-cell title="用户协议" is-link url="/pages/help/agreement" />
+        <van-cell title="当前位置" is-link bind:click="navigateMap" />
     </van-cell-group>
     
     <van-button type="default" block
@@ -121,6 +122,7 @@
     <van-cell-group custom-class="mt15">
         <van-cell title="关于我们" is-link url="/pages/help/about" />
         <van-cell title="用户协议" is-link url="/pages/help/agreement" />
+        <van-cell title="当前位置" is-link bind:click="navigateMap" />
     </van-cell-group>
     </block>
     

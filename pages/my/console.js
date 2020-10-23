@@ -123,6 +123,28 @@ Page({
         }
       }
     })
+  },
+  
+  //进入地图
+  navigateMap() {
+    const that = this;
+    const key = 'QCEBZ-LQW63-BLT3L-YHVMA-XGPKV-SYFRR'; //使用在腾讯位置服务申请的key
+    const referer = '外推网'; //调用插件的app的名称
+    wx.getLocation({
+      type: 'wgs84',
+      success (res) {
+        const location = JSON.stringify({
+          latitude: res.latitude,
+          longitude: res.longitude
+        });
+        const category = '生活服务,娱乐休闲';
+        
+        wx.navigateTo({
+          url: `plugin://chooseLocation/index?key=${key}&referer=${referer}&location=${location}&category=${category}`
+        });
+      }
+    })
+    
   }
   
 })
